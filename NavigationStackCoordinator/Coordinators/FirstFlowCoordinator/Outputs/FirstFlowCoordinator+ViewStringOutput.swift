@@ -11,14 +11,15 @@ extension FirstFlowCoordinator {
 	
 	final class ViewStringOutput: IViewStringOutput {
 		
-		let pathManager: PathManager
+		let coordinator: FirstFlowCoordinator
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
+		
+		init(coordinator: FirstFlowCoordinator) {
+			self.coordinator = coordinator
 		}
 		
 		func pushNextScreen() {
-			pathManager.push(SecondFlowCoordinator(page: .viewString, pathManager: pathManager))
+			coordinator.showSecondFlowCoordinatorView()
 		}
 		
 		

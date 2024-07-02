@@ -8,47 +8,56 @@
 import Foundation
 import SwiftUI
 
-enum FirstFlowPage {
-	case viewInt, viewString, viewDouble
+
+
+protocol IFirstFlowCoordinator{
+	
+	func showViewString()
+	
+	func showViewInt()
+	
+	func showViewDouble()
+	
+	func showSecondFlowCoordinatorView()
+	
+	func selectNewTab(index: Int)
 }
 
-
-
-final class FirstFlowCoordinator: Hashable {
+final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	
-	private let pathManager: PathManager
-	
-	private var id: UUID
-	private var output: Output?
-	private var page: FirstFlowPage
-	
-	struct Output {
-		var goToNextCoordinator: () -> Void
+	enum Page: CaseIterable {
+		case viewInt, viewString, viewDouble
 	}
 	
+	private let pathManager: PathManager
+	private let assembly: IFirstFlowCoordinatorAssembly
+	
+	private var id: UUID
+	private var page: Page
+	private var tabBarManager: TabBarManager
+	
 	init(
-		page: FirstFlowPage,
+		page: Page,
 		pathManager: PathManager,
-		output: Output? = nil
+		assembly: IFirstFlowCoordinatorAssembly,
+		tabBarManager: TabBarManager
 	) {
 		id = UUID()
 		self.page = page
-		self.output = output
 		self.pathManager = pathManager
+		self.assembly = assembly
+		self.tabBarManager = tabBarManager
 	}
 	
 	@ViewBuilder
 	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			ViewInt().configure(.init(value: 100), output: ViewIntOutput(pathManager: pathManager))
-				.navigationDestination(for: SecondFlowCoordinator.self) { coordinator in
-					coordinator.view()
-				}
+			assembly.assemblyViewInt(.init(value: 100), output: ViewIntOutput(coordinator: self))
 		case .viewDouble:
-			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
+			assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
 		case .viewString:
-			ViewString().configure(.init(value: "FirstFlow"), output: ViewStringOutput(pathManager: pathManager))
+			assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
 				.navigationDestination(for: ThirdFlowCoordinator.self) { [pathManager] coordinator in
 					coordinator.view(pathManager: pathManager)
 				}
@@ -56,6 +65,33 @@ final class FirstFlowCoordinator: Hashable {
 		}
 	}
 	
+	func selectNewTab(index: Int) {
+		self.tabBarManager.selectedTabIndex = index
+	}
+	
+	//MARK:  Show Views
+	
+	func showViewString() {
+		self.page = .viewString
+		self.pathManager.push(self)
+	}
+	
+	func showViewInt() {
+		self.page = .viewInt
+		self.pathManager.push(self)
+	}
+	
+	func showViewDouble() {
+		self.page = .viewDouble
+		self.pathManager.push(self)
+	}
+	
+	func showSecondFlowCoordinatorView() {
+		let secondCoordinator = SecondFlowCoordinator(page: .viewString, pathManager: self.pathManager)
+		self.pathManager.push(secondCoordinator)
+	}
+	
+	// MARK: Hashable
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
 	}
@@ -67,28 +103,5 @@ final class FirstFlowCoordinator: Hashable {
 		lhs.id == rhs.id
 	}
 	
-	func push<V>(_ value: V) where V : Hashable {
-		pathManager.push(value)
-	}
 }
-
-
-	
-	
-	
-	
-
-	
-	
-	final class FirstTabOutput: IFirstTabViewOutput {
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(FirstFlowCoordinator(page: .viewInt, pathManager: pathManager))
-		}
-	}
 

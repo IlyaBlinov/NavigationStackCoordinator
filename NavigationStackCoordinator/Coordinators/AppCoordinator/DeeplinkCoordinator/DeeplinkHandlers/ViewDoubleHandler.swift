@@ -6,3 +6,30 @@
 //
 
 import Foundation
+
+final class ViewDoubleHandler: IDeeplinkHandler {
+	
+	private var coordinator: FirstFlowCoordinator
+	
+	
+	init(coordinator: FirstFlowCoordinator) {
+		self.coordinator = coordinator
+	}
+	
+	// MARK: - DeeplinkHandlerProtocol
+	
+	func canOpenURL(_ url: URL) -> Bool {
+		return url.absoluteString == "deeplink://tab_1/view_double/Hello_View_Double"
+	}
+	
+	func openURL(_ url: URL) {
+		guard canOpenURL(url) else {
+			return
+		}
+		coordinator.selectNewTab(index: 0)
+		coordinator.showViewInt()
+		
+	}
+	
+	
+}

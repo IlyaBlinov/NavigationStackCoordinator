@@ -10,14 +10,15 @@ import Foundation
 extension FirstFlowCoordinator {
 	final class ViewDoubleOutput: IViewDoubleOutput {
 		
-		let pathManager: PathManager
+		let coordinator: FirstFlowCoordinator
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
+		
+		init(coordinator: FirstFlowCoordinator) {
+			self.coordinator = coordinator
 		}
 		
 		func pushNextScreen() {
-			pathManager.push(FirstFlowCoordinator(page: .viewString, pathManager: pathManager))
+			coordinator.showViewString()
 		}
 		
 		

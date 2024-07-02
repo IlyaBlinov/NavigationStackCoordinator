@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+extension FirstFlowCoordinator {
+	final class FirstTabOutput: IFirstTabViewOutput {
+		let coordinator: FirstFlowCoordinator
+		
+		
+		init(coordinator: FirstFlowCoordinator) {
+			self.coordinator = coordinator
+		}
+		
+		func pushNextScreen() {
+			coordinator.showViewInt()
+		}
+	}
+}

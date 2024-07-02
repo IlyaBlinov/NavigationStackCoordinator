@@ -8,18 +8,111 @@
 
 /* Begin PBXBuildFile section */
 		6F9A46A82C2D272E009983A3 /* NavigationStackCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */; };
-		6F9A46AA2C2D272E009983A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46A92C2D272E009983A3 /* ContentView.swift */; };
 		6F9A46AC2C2D272F009983A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AB2C2D272F009983A3 /* Assets.xcassets */; };
 		6F9A46B02C2D272F009983A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */; };
+		6F9A46B72C2D27BA009983A3 /* PathManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46B62C2D27BA009983A3 /* PathManager.swift */; };
+		6F9A46CA2C2D2F3D009983A3 /* IViewDoubleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46B82C2D2F3D009983A3 /* IViewDoubleOutput.swift */; };
+		6F9A46CB2C2D2F3D009983A3 /* ViewDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46B92C2D2F3D009983A3 /* ViewDouble.swift */; };
+		6F9A46CC2C2D2F3D009983A3 /* ViewDoubleAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46BA2C2D2F3D009983A3 /* ViewDoubleAssembly.swift */; };
+		6F9A46CD2C2D2F3D009983A3 /* ViewDoubleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46BB2C2D2F3D009983A3 /* ViewDoubleInteractor.swift */; };
+		6F9A46CE2C2D2F3D009983A3 /* ViewDoubleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46BC2C2D2F3D009983A3 /* ViewDoubleModel.swift */; };
+		6F9A46CF2C2D2F3D009983A3 /* IViewIntOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46BE2C2D2F3D009983A3 /* IViewIntOutput.swift */; };
+		6F9A46D02C2D2F3D009983A3 /* ViewInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46BF2C2D2F3D009983A3 /* ViewInt.swift */; };
+		6F9A46D12C2D2F3D009983A3 /* ViewIntAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C02C2D2F3D009983A3 /* ViewIntAssembly.swift */; };
+		6F9A46D22C2D2F3D009983A3 /* ViewIntInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C12C2D2F3D009983A3 /* ViewIntInteractor.swift */; };
+		6F9A46D32C2D2F3D009983A3 /* ViewIntModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C22C2D2F3D009983A3 /* ViewIntModel.swift */; };
+		6F9A46D42C2D2F3D009983A3 /* IViewStringOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C42C2D2F3D009983A3 /* IViewStringOutput.swift */; };
+		6F9A46D52C2D2F3D009983A3 /* ViewString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C52C2D2F3D009983A3 /* ViewString.swift */; };
+		6F9A46D62C2D2F3D009983A3 /* ViewStringAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C62C2D2F3D009983A3 /* ViewStringAssembly.swift */; };
+		6F9A46D72C2D2F3D009983A3 /* ViewStringInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C72C2D2F3D009983A3 /* ViewStringInteractor.swift */; };
+		6F9A46D82C2D2F3D009983A3 /* ViewStringModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46C82C2D2F3D009983A3 /* ViewStringModel.swift */; };
+		6F9A46E12C2D2F71009983A3 /* CustomNavigationBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46D92C2D2F71009983A3 /* CustomNavigationBarContainerView.swift */; };
+		6F9A46E22C2D2F71009983A3 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46DA2C2D2F71009983A3 /* CustomNavigationBarView.swift */; };
+		6F9A46E32C2D2F71009983A3 /* TabBarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46DC2C2D2F71009983A3 /* TabBarItemView.swift */; };
+		6F9A46E42C2D2F71009983A3 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46DD2C2D2F71009983A3 /* TabBarView.swift */; };
+		6F9A46E52C2D2F71009983A3 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46DE2C2D2F71009983A3 /* TabItem.swift */; };
+		6F9A46E62C2D2F71009983A3 /* TabItemPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46DF2C2D2F71009983A3 /* TabItemPreferenceKey.swift */; };
+		6F9A46E82C2D2FA5009983A3 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46E72C2D2FA5009983A3 /* MainView.swift */; };
+		6F9A46EA2C2D302D009983A3 /* FirstFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46E92C2D302D009983A3 /* FirstFlowCoordinator.swift */; };
+		6F9A46ED2C2D30E1009983A3 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46EC2C2D30E1009983A3 /* AppCoordinator.swift */; };
+		6F9A46F42C2DD6F1009983A3 /* FirstTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46EE2C2DD6F1009983A3 /* FirstTabView.swift */; };
+		6F9A46F52C2DD6F1009983A3 /* FirstTabViewAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46EF2C2DD6F1009983A3 /* FirstTabViewAssembly.swift */; };
+		6F9A46F62C2DD6F1009983A3 /* FirstTabViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46F02C2DD6F1009983A3 /* FirstTabViewInteractor.swift */; };
+		6F9A46F72C2DD6F1009983A3 /* FirstTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46F12C2DD6F1009983A3 /* FirstTabViewModel.swift */; };
+		6F9A46F82C2DD6F1009983A3 /* IFirstTabViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46F22C2DD6F1009983A3 /* IFirstTabViewOutput.swift */; };
+		6F9A46FA2C2DD86B009983A3 /* SecondFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46F92C2DD86B009983A3 /* SecondFlowCoordinator.swift */; };
+		6F9A46FC2C2DE072009983A3 /* ThirdFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46FB2C2DE072009983A3 /* ThirdFlowCoordinator.swift */; };
+		6F9A46FE2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46FD2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift */; };
+		6F9A47002C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46FF2C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift */; };
+		6F9A47022C2F0125009983A3 /* FirstFlowCoordinator+ViewStringOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47012C2F0125009983A3 /* FirstFlowCoordinator+ViewStringOutput.swift */; };
+		6F9A47062C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47052C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift */; };
+		6F9A47082C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47072C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift */; };
+		6F9A470D2C315C73009983A3 /* FirstTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A470C2C315C73009983A3 /* FirstTabCoordinator.swift */; };
+		6F9A47102C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A470F2C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift */; };
+		6F9A47132C3166B1009983A3 /* MainContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47122C3166B1009983A3 /* MainContainer.swift */; };
+		6F9A47152C3166DE009983A3 /* FirstTabCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47142C3166DE009983A3 /* FirstTabCoordinatorView.swift */; };
+		6F9A47182C33B8A5009983A3 /* DeeplinkCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47172C33B8A5009983A3 /* DeeplinkCoordinator.swift */; };
+		6F9A471B2C33B8EE009983A3 /* ViewStringHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A471A2C33B8EE009983A3 /* ViewStringHandler.swift */; };
+		6F9A471E2C33BE61009983A3 /* ViewIntHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A471D2C33BE61009983A3 /* ViewIntHandler.swift */; };
+		6F9A47202C33BE7D009983A3 /* ViewDoubleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A471F2C33BE7D009983A3 /* ViewDoubleHandler.swift */; };
+		6F9A47222C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47212C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift */; };
+		6F9A47252C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6F9A46A42C2D272E009983A3 /* NavigationStackCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinatorApp.swift; sourceTree = "<group>"; };
-		6F9A46A92C2D272E009983A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		6F9A46AB2C2D272F009983A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F9A46AD2C2D272F009983A3 /* NavigationStackCoordinator.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NavigationStackCoordinator.entitlements; sourceTree = "<group>"; };
 		6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6F9A46B62C2D27BA009983A3 /* PathManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathManager.swift; sourceTree = "<group>"; };
+		6F9A46B82C2D2F3D009983A3 /* IViewDoubleOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IViewDoubleOutput.swift; sourceTree = "<group>"; };
+		6F9A46B92C2D2F3D009983A3 /* ViewDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDouble.swift; sourceTree = "<group>"; };
+		6F9A46BA2C2D2F3D009983A3 /* ViewDoubleAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDoubleAssembly.swift; sourceTree = "<group>"; };
+		6F9A46BB2C2D2F3D009983A3 /* ViewDoubleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDoubleInteractor.swift; sourceTree = "<group>"; };
+		6F9A46BC2C2D2F3D009983A3 /* ViewDoubleModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDoubleModel.swift; sourceTree = "<group>"; };
+		6F9A46BE2C2D2F3D009983A3 /* IViewIntOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IViewIntOutput.swift; sourceTree = "<group>"; };
+		6F9A46BF2C2D2F3D009983A3 /* ViewInt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewInt.swift; sourceTree = "<group>"; };
+		6F9A46C02C2D2F3D009983A3 /* ViewIntAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewIntAssembly.swift; sourceTree = "<group>"; };
+		6F9A46C12C2D2F3D009983A3 /* ViewIntInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewIntInteractor.swift; sourceTree = "<group>"; };
+		6F9A46C22C2D2F3D009983A3 /* ViewIntModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewIntModel.swift; sourceTree = "<group>"; };
+		6F9A46C42C2D2F3D009983A3 /* IViewStringOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IViewStringOutput.swift; sourceTree = "<group>"; };
+		6F9A46C52C2D2F3D009983A3 /* ViewString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewString.swift; sourceTree = "<group>"; };
+		6F9A46C62C2D2F3D009983A3 /* ViewStringAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStringAssembly.swift; sourceTree = "<group>"; };
+		6F9A46C72C2D2F3D009983A3 /* ViewStringInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStringInteractor.swift; sourceTree = "<group>"; };
+		6F9A46C82C2D2F3D009983A3 /* ViewStringModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStringModel.swift; sourceTree = "<group>"; };
+		6F9A46D92C2D2F71009983A3 /* CustomNavigationBarContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarContainerView.swift; sourceTree = "<group>"; };
+		6F9A46DA2C2D2F71009983A3 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		6F9A46DC2C2D2F71009983A3 /* TabBarItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarItemView.swift; sourceTree = "<group>"; };
+		6F9A46DD2C2D2F71009983A3 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		6F9A46DE2C2D2F71009983A3 /* TabItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		6F9A46DF2C2D2F71009983A3 /* TabItemPreferenceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabItemPreferenceKey.swift; sourceTree = "<group>"; };
+		6F9A46E72C2D2FA5009983A3 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		6F9A46E92C2D302D009983A3 /* FirstFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinator.swift; sourceTree = "<group>"; };
+		6F9A46EC2C2D30E1009983A3 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		6F9A46EE2C2DD6F1009983A3 /* FirstTabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTabView.swift; sourceTree = "<group>"; };
+		6F9A46EF2C2DD6F1009983A3 /* FirstTabViewAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTabViewAssembly.swift; sourceTree = "<group>"; };
+		6F9A46F02C2DD6F1009983A3 /* FirstTabViewInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTabViewInteractor.swift; sourceTree = "<group>"; };
+		6F9A46F12C2DD6F1009983A3 /* FirstTabViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstTabViewModel.swift; sourceTree = "<group>"; };
+		6F9A46F22C2DD6F1009983A3 /* IFirstTabViewOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IFirstTabViewOutput.swift; sourceTree = "<group>"; };
+		6F9A46F92C2DD86B009983A3 /* SecondFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowCoordinator.swift; sourceTree = "<group>"; };
+		6F9A46FB2C2DE072009983A3 /* ThirdFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdFlowCoordinator.swift; sourceTree = "<group>"; };
+		6F9A46FD2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstFlowCoordinator+ViewIntOutput.swift"; sourceTree = "<group>"; };
+		6F9A46FF2C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstFlowCoordinator+ViewDoubleOutput.swift"; sourceTree = "<group>"; };
+		6F9A47012C2F0125009983A3 /* FirstFlowCoordinator+ViewStringOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstFlowCoordinator+ViewStringOutput.swift"; sourceTree = "<group>"; };
+		6F9A47052C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstFlowCoordinator+FirstTabOutput.swift"; sourceTree = "<group>"; };
+		6F9A47072C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6F9A470C2C315C73009983A3 /* FirstTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabCoordinator.swift; sourceTree = "<group>"; };
+		6F9A470F2C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6F9A47122C3166B1009983A3 /* MainContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContainer.swift; sourceTree = "<group>"; };
+		6F9A47142C3166DE009983A3 /* FirstTabCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabCoordinatorView.swift; sourceTree = "<group>"; };
+		6F9A47162C32F428009983A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6F9A47172C33B8A5009983A3 /* DeeplinkCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkCoordinator.swift; sourceTree = "<group>"; };
+		6F9A471A2C33B8EE009983A3 /* ViewStringHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStringHandler.swift; sourceTree = "<group>"; };
+		6F9A471D2C33BE61009983A3 /* ViewIntHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntHandler.swift; sourceTree = "<group>"; };
+		6F9A471F2C33BE7D009983A3 /* ViewDoubleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDoubleHandler.swift; sourceTree = "<group>"; };
+		6F9A47212C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowDeeplinkHandlersFactory.swift; sourceTree = "<group>"; };
+		6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabDeeplinkHandlersFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +145,14 @@
 		6F9A46A62C2D272E009983A3 /* NavigationStackCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				6F9A47162C32F428009983A3 /* Info.plist */,
 				6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */,
-				6F9A46A92C2D272E009983A3 /* ContentView.swift */,
+				6F9A46E72C2D2FA5009983A3 /* MainView.swift */,
+				6F9A46DB2C2D2F71009983A3 /* CustomNavigationBarContainerView */,
+				6F9A46E02C2D2F71009983A3 /* TabBar */,
+				6F9A46EB2C2D3033009983A3 /* Coordinators */,
+				6F9A47112C315DCB009983A3 /* Scenes */,
+				6F9A46B62C2D27BA009983A3 /* PathManager.swift */,
 				6F9A46AB2C2D272F009983A3 /* Assets.xcassets */,
 				6F9A46AD2C2D272F009983A3 /* NavigationStackCoordinator.entitlements */,
 				6F9A46AE2C2D272F009983A3 /* Preview Content */,
@@ -67,6 +166,183 @@
 				6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6F9A46BD2C2D2F3D009983A3 /* ViewDouble */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46B82C2D2F3D009983A3 /* IViewDoubleOutput.swift */,
+				6F9A46B92C2D2F3D009983A3 /* ViewDouble.swift */,
+				6F9A46BA2C2D2F3D009983A3 /* ViewDoubleAssembly.swift */,
+				6F9A46BB2C2D2F3D009983A3 /* ViewDoubleInteractor.swift */,
+				6F9A46BC2C2D2F3D009983A3 /* ViewDoubleModel.swift */,
+			);
+			path = ViewDouble;
+			sourceTree = "<group>";
+		};
+		6F9A46C32C2D2F3D009983A3 /* ViewInt */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46BE2C2D2F3D009983A3 /* IViewIntOutput.swift */,
+				6F9A46BF2C2D2F3D009983A3 /* ViewInt.swift */,
+				6F9A46C02C2D2F3D009983A3 /* ViewIntAssembly.swift */,
+				6F9A46C12C2D2F3D009983A3 /* ViewIntInteractor.swift */,
+				6F9A46C22C2D2F3D009983A3 /* ViewIntModel.swift */,
+			);
+			path = ViewInt;
+			sourceTree = "<group>";
+		};
+		6F9A46C92C2D2F3D009983A3 /* ViewString */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46C42C2D2F3D009983A3 /* IViewStringOutput.swift */,
+				6F9A46C52C2D2F3D009983A3 /* ViewString.swift */,
+				6F9A46C62C2D2F3D009983A3 /* ViewStringAssembly.swift */,
+				6F9A46C72C2D2F3D009983A3 /* ViewStringInteractor.swift */,
+				6F9A46C82C2D2F3D009983A3 /* ViewStringModel.swift */,
+			);
+			path = ViewString;
+			sourceTree = "<group>";
+		};
+		6F9A46DB2C2D2F71009983A3 /* CustomNavigationBarContainerView */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46D92C2D2F71009983A3 /* CustomNavigationBarContainerView.swift */,
+				6F9A46DA2C2D2F71009983A3 /* CustomNavigationBarView.swift */,
+			);
+			path = CustomNavigationBarContainerView;
+			sourceTree = "<group>";
+		};
+		6F9A46E02C2D2F71009983A3 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46DC2C2D2F71009983A3 /* TabBarItemView.swift */,
+				6F9A46DD2C2D2F71009983A3 /* TabBarView.swift */,
+				6F9A46DE2C2D2F71009983A3 /* TabItem.swift */,
+				6F9A46DF2C2D2F71009983A3 /* TabItemPreferenceKey.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		6F9A46EB2C2D3033009983A3 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A47042C2F01D2009983A3 /* FirstFlowCoordinator */,
+				6F9A47092C315C4B009983A3 /* ThirdFlowCoordinator */,
+				6F9A470A2C315C52009983A3 /* SecondFlowCoordinator */,
+				6F9A470B2C315C61009983A3 /* AppCoordinator */,
+				6F9A470E2C315C79009983A3 /* FirstTabCoordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		6F9A46F32C2DD6F1009983A3 /* FirstTabView */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46EE2C2DD6F1009983A3 /* FirstTabView.swift */,
+				6F9A46EF2C2DD6F1009983A3 /* FirstTabViewAssembly.swift */,
+				6F9A46F02C2DD6F1009983A3 /* FirstTabViewInteractor.swift */,
+				6F9A46F12C2DD6F1009983A3 /* FirstTabViewModel.swift */,
+				6F9A46F22C2DD6F1009983A3 /* IFirstTabViewOutput.swift */,
+			);
+			path = FirstTabView;
+			sourceTree = "<group>";
+		};
+		6F9A47032C2F01C4009983A3 /* Outputs */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46FD2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift */,
+				6F9A46FF2C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift */,
+				6F9A47012C2F0125009983A3 /* FirstFlowCoordinator+ViewStringOutput.swift */,
+				6F9A47052C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift */,
+			);
+			path = Outputs;
+			sourceTree = "<group>";
+		};
+		6F9A47042C2F01D2009983A3 /* FirstFlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A47072C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift */,
+				6F9A46E92C2D302D009983A3 /* FirstFlowCoordinator.swift */,
+				6F9A47032C2F01C4009983A3 /* Outputs */,
+			);
+			path = FirstFlowCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A47092C315C4B009983A3 /* ThirdFlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46FB2C2DE072009983A3 /* ThirdFlowCoordinator.swift */,
+			);
+			path = ThirdFlowCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A470A2C315C52009983A3 /* SecondFlowCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46F92C2DD86B009983A3 /* SecondFlowCoordinator.swift */,
+			);
+			path = SecondFlowCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A470B2C315C61009983A3 /* AppCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46EC2C2D30E1009983A3 /* AppCoordinator.swift */,
+				6F9A47192C33B8C5009983A3 /* DeeplinkCoordinator */,
+				6F9A47122C3166B1009983A3 /* MainContainer.swift */,
+			);
+			path = AppCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A470E2C315C79009983A3 /* FirstTabCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A470C2C315C73009983A3 /* FirstTabCoordinator.swift */,
+				6F9A470F2C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift */,
+				6F9A47142C3166DE009983A3 /* FirstTabCoordinatorView.swift */,
+			);
+			path = FirstTabCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A47112C315DCB009983A3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46F32C2DD6F1009983A3 /* FirstTabView */,
+				6F9A46BD2C2D2F3D009983A3 /* ViewDouble */,
+				6F9A46C32C2D2F3D009983A3 /* ViewInt */,
+				6F9A46C92C2D2F3D009983A3 /* ViewString */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		6F9A47192C33B8C5009983A3 /* DeeplinkCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A47172C33B8A5009983A3 /* DeeplinkCoordinator.swift */,
+				6F9A471C2C33B900009983A3 /* DeeplinkHandlers */,
+			);
+			path = DeeplinkCoordinator;
+			sourceTree = "<group>";
+		};
+		6F9A471C2C33B900009983A3 /* DeeplinkHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A471A2C33B8EE009983A3 /* ViewStringHandler.swift */,
+				6F9A471D2C33BE61009983A3 /* ViewIntHandler.swift */,
+				6F9A471F2C33BE7D009983A3 /* ViewDoubleHandler.swift */,
+				6F9A47232C33C4DF009983A3 /* DeeplinkHandlersFactory */,
+			);
+			path = DeeplinkHandlers;
+			sourceTree = "<group>";
+		};
+		6F9A47232C33C4DF009983A3 /* DeeplinkHandlersFactory */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A47212C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift */,
+				6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */,
+			);
+			path = DeeplinkHandlersFactory;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,8 +415,54 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F9A46AA2C2D272E009983A3 /* ContentView.swift in Sources */,
+				6F9A46E82C2D2FA5009983A3 /* MainView.swift in Sources */,
+				6F9A46CD2C2D2F3D009983A3 /* ViewDoubleInteractor.swift in Sources */,
+				6F9A46B72C2D27BA009983A3 /* PathManager.swift in Sources */,
+				6F9A47222C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift in Sources */,
+				6F9A46E22C2D2F71009983A3 /* CustomNavigationBarView.swift in Sources */,
+				6F9A47062C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift in Sources */,
+				6F9A46EA2C2D302D009983A3 /* FirstFlowCoordinator.swift in Sources */,
+				6F9A47202C33BE7D009983A3 /* ViewDoubleHandler.swift in Sources */,
+				6F9A471B2C33B8EE009983A3 /* ViewStringHandler.swift in Sources */,
+				6F9A471E2C33BE61009983A3 /* ViewIntHandler.swift in Sources */,
+				6F9A46FE2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift in Sources */,
+				6F9A46ED2C2D30E1009983A3 /* AppCoordinator.swift in Sources */,
+				6F9A46CA2C2D2F3D009983A3 /* IViewDoubleOutput.swift in Sources */,
+				6F9A46F82C2DD6F1009983A3 /* IFirstTabViewOutput.swift in Sources */,
+				6F9A46D42C2D2F3D009983A3 /* IViewStringOutput.swift in Sources */,
+				6F9A46D62C2D2F3D009983A3 /* ViewStringAssembly.swift in Sources */,
+				6F9A46E52C2D2F71009983A3 /* TabItem.swift in Sources */,
+				6F9A47102C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift in Sources */,
+				6F9A46D52C2D2F3D009983A3 /* ViewString.swift in Sources */,
+				6F9A46E32C2D2F71009983A3 /* TabBarItemView.swift in Sources */,
+				6F9A46E12C2D2F71009983A3 /* CustomNavigationBarContainerView.swift in Sources */,
+				6F9A46FC2C2DE072009983A3 /* ThirdFlowCoordinator.swift in Sources */,
+				6F9A46FA2C2DD86B009983A3 /* SecondFlowCoordinator.swift in Sources */,
+				6F9A46E62C2D2F71009983A3 /* TabItemPreferenceKey.swift in Sources */,
+				6F9A47132C3166B1009983A3 /* MainContainer.swift in Sources */,
+				6F9A46D02C2D2F3D009983A3 /* ViewInt.swift in Sources */,
+				6F9A46CB2C2D2F3D009983A3 /* ViewDouble.swift in Sources */,
+				6F9A46F42C2DD6F1009983A3 /* FirstTabView.swift in Sources */,
+				6F9A47182C33B8A5009983A3 /* DeeplinkCoordinator.swift in Sources */,
+				6F9A470D2C315C73009983A3 /* FirstTabCoordinator.swift in Sources */,
+				6F9A46E42C2D2F71009983A3 /* TabBarView.swift in Sources */,
+				6F9A46F62C2DD6F1009983A3 /* FirstTabViewInteractor.swift in Sources */,
 				6F9A46A82C2D272E009983A3 /* NavigationStackCoordinatorApp.swift in Sources */,
+				6F9A46D32C2D2F3D009983A3 /* ViewIntModel.swift in Sources */,
+				6F9A46CF2C2D2F3D009983A3 /* IViewIntOutput.swift in Sources */,
+				6F9A46D72C2D2F3D009983A3 /* ViewStringInteractor.swift in Sources */,
+				6F9A46D12C2D2F3D009983A3 /* ViewIntAssembly.swift in Sources */,
+				6F9A47152C3166DE009983A3 /* FirstTabCoordinatorView.swift in Sources */,
+				6F9A47022C2F0125009983A3 /* FirstFlowCoordinator+ViewStringOutput.swift in Sources */,
+				6F9A46CC2C2D2F3D009983A3 /* ViewDoubleAssembly.swift in Sources */,
+				6F9A47002C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift in Sources */,
+				6F9A47082C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift in Sources */,
+				6F9A46F72C2DD6F1009983A3 /* FirstTabViewModel.swift in Sources */,
+				6F9A46CE2C2D2F3D009983A3 /* ViewDoubleModel.swift in Sources */,
+				6F9A47252C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift in Sources */,
+				6F9A46D22C2D2F3D009983A3 /* ViewIntInteractor.swift in Sources */,
+				6F9A46D82C2D2F3D009983A3 /* ViewStringModel.swift in Sources */,
+				6F9A46F52C2DD6F1009983A3 /* FirstTabViewAssembly.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +596,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NavigationStackCoordinator/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -312,6 +635,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NavigationStackCoordinator/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

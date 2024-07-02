@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class FirstTabwDeeplinkHandlersFactory {
+final class FirstTabDeeplinkHandlersFactory {
 	
-	let firstFlowDeeplinkHandlersFactory: FirstFlowDeeplinkHandlersFactory
+	private let firstFlowDeeplinkHandlersFactory: FirstFlowDeeplinkHandlersFactory
 	
 	init(firstFlowDeeplinkHandlersFactory: FirstFlowDeeplinkHandlersFactory) {
 		self.firstFlowDeeplinkHandlersFactory = firstFlowDeeplinkHandlersFactory
