@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-final class TabBarManager: ObservableObject {
-	@Published var selectedTabIndex: Int = 0
-}
-
-
 final class AppCoordinator: ObservableObject {
 	
 	private let mainContainer: MainContainer

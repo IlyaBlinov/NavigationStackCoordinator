@@ -57,6 +57,7 @@
 		6F9A47202C33BE7D009983A3 /* ViewDoubleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A471F2C33BE7D009983A3 /* ViewDoubleHandler.swift */; };
 		6F9A47222C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47212C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift */; };
 		6F9A47252C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */; };
+		6F9A47272C33C9ED009983A3 /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47262C33C9ED009983A3 /* TabBarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,6 +114,7 @@
 		6F9A471F2C33BE7D009983A3 /* ViewDoubleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewDoubleHandler.swift; sourceTree = "<group>"; };
 		6F9A47212C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowDeeplinkHandlersFactory.swift; sourceTree = "<group>"; };
 		6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabDeeplinkHandlersFactory.swift; sourceTree = "<group>"; };
+		6F9A47262C33C9ED009983A3 /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,12 +149,10 @@
 			children = (
 				6F9A47162C32F428009983A3 /* Info.plist */,
 				6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */,
-				6F9A46E72C2D2FA5009983A3 /* MainView.swift */,
-				6F9A46DB2C2D2F71009983A3 /* CustomNavigationBarContainerView */,
-				6F9A46E02C2D2F71009983A3 /* TabBar */,
+				6F9A47282C33CA39009983A3 /* MainView */,
+				6F9A47292C33CA49009983A3 /* Custom Views */,
 				6F9A46EB2C2D3033009983A3 /* Coordinators */,
 				6F9A47112C315DCB009983A3 /* Scenes */,
-				6F9A46B62C2D27BA009983A3 /* PathManager.swift */,
 				6F9A46AB2C2D272F009983A3 /* Assets.xcassets */,
 				6F9A46AD2C2D272F009983A3 /* NavigationStackCoordinator.entitlements */,
 				6F9A46AE2C2D272F009983A3 /* Preview Content */,
@@ -227,11 +227,8 @@
 		6F9A46EB2C2D3033009983A3 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				6F9A47042C2F01D2009983A3 /* FirstFlowCoordinator */,
-				6F9A47092C315C4B009983A3 /* ThirdFlowCoordinator */,
-				6F9A470A2C315C52009983A3 /* SecondFlowCoordinator */,
+				6F9A47192C33B8C5009983A3 /* DeeplinkCoordinator */,
 				6F9A470B2C315C61009983A3 /* AppCoordinator */,
-				6F9A470E2C315C79009983A3 /* FirstTabCoordinator */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -288,9 +285,11 @@
 		6F9A470B2C315C61009983A3 /* AppCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				6F9A46EC2C2D30E1009983A3 /* AppCoordinator.swift */,
-				6F9A47192C33B8C5009983A3 /* DeeplinkCoordinator */,
 				6F9A47122C3166B1009983A3 /* MainContainer.swift */,
+				6F9A46B62C2D27BA009983A3 /* PathManager.swift */,
+				6F9A46EC2C2D30E1009983A3 /* AppCoordinator.swift */,
+				6F9A47262C33C9ED009983A3 /* TabBarManager.swift */,
+				6F9A470E2C315C79009983A3 /* FirstTabCoordinator */,
 			);
 			path = AppCoordinator;
 			sourceTree = "<group>";
@@ -298,6 +297,9 @@
 		6F9A470E2C315C79009983A3 /* FirstTabCoordinator */ = {
 			isa = PBXGroup;
 			children = (
+				6F9A47042C2F01D2009983A3 /* FirstFlowCoordinator */,
+				6F9A47092C315C4B009983A3 /* ThirdFlowCoordinator */,
+				6F9A470A2C315C52009983A3 /* SecondFlowCoordinator */,
 				6F9A470C2C315C73009983A3 /* FirstTabCoordinator.swift */,
 				6F9A470F2C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift */,
 				6F9A47142C3166DE009983A3 /* FirstTabCoordinatorView.swift */,
@@ -343,6 +345,23 @@
 				6F9A47242C33C50C009983A3 /* FirstTabDeeplinkHandlersFactory.swift */,
 			);
 			path = DeeplinkHandlersFactory;
+			sourceTree = "<group>";
+		};
+		6F9A47282C33CA39009983A3 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46E72C2D2FA5009983A3 /* MainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		6F9A47292C33CA49009983A3 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				6F9A46DB2C2D2F71009983A3 /* CustomNavigationBarContainerView */,
+				6F9A46E02C2D2F71009983A3 /* TabBar */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +459,7 @@
 				6F9A46FA2C2DD86B009983A3 /* SecondFlowCoordinator.swift in Sources */,
 				6F9A46E62C2D2F71009983A3 /* TabItemPreferenceKey.swift in Sources */,
 				6F9A47132C3166B1009983A3 /* MainContainer.swift in Sources */,
+				6F9A47272C33C9ED009983A3 /* TabBarManager.swift in Sources */,
 				6F9A46D02C2D2F3D009983A3 /* ViewInt.swift in Sources */,
 				6F9A46CB2C2D2F3D009983A3 /* ViewDouble.swift in Sources */,
 				6F9A46F42C2DD6F1009983A3 /* FirstTabView.swift in Sources */,
