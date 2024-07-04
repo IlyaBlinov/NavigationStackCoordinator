@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+
 struct FirstTabCoordinatorView<R: View>: View {
 	
 	@StateObject private var  pathManager: PathManager
@@ -38,6 +39,30 @@ struct FirstTabCoordinatorView<R: View>: View {
 					coordinator.view()
 				}
 		}
+		.sheet(item: $pathManager.sheetAction) { action in
+				showSheetView(action)
+		}
+		.fullScreenCover(item: $pathManager.fullScreenCover) { action in
+			showFullScreenCoverView(action)
+		}
 	}
 	
+	@ViewBuilder
+	private func showSheetView(_ action: SheetAction) -> some View {
+		switch action {
+		case .viewDouble(let viewDouble):
+			viewDouble
+		}
+	}
+	
+	@ViewBuilder
+	private func showFullScreenCoverView(_ action: FullScreenCoverAction) -> some View {
+		switch action {
+		case .viewString(let viewString):
+			viewString
+		}
+	}
+
+	
 }
+

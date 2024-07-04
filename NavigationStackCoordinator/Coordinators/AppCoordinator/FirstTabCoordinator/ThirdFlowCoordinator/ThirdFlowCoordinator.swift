@@ -30,7 +30,7 @@ final class ThirdFlowCoordinator: Hashable, Codable {
 	func view(pathManager: PathManager) -> some View {
 		switch self.page {
 		case .viewInt:
-			ViewInt().configure(.init(value: 100), output: ViewIntOutput(pathManager: pathManager))
+			ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
 		case .viewDouble:
 			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
 		case .viewString:
@@ -53,6 +53,8 @@ final class ThirdFlowCoordinator: Hashable, Codable {
 
 extension ThirdFlowCoordinator {
 	final class ViewIntOutput: IViewIntOutput {
+		func presentDoubleViewSheet() {
+		}
 		
 		let pathManager: PathManager
 		

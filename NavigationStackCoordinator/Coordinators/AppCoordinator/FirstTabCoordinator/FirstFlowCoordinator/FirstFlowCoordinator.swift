@@ -10,7 +10,7 @@ import SwiftUI
 
 
 
-protocol IFirstFlowCoordinator{
+protocol IFirstFlowCoordinator {
 	
 	func showViewString()
 	
@@ -21,6 +21,9 @@ protocol IFirstFlowCoordinator{
 	func showSecondFlowCoordinatorView()
 	
 	func selectNewTab(index: Int)
+	
+	func showDoubleViewSheet()
+	
 }
 
 final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
@@ -32,9 +35,10 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	private let pathManager: PathManager
 	private let assembly: IFirstFlowCoordinatorAssembly
 	
-	private var id: UUID
+	private let id: UUID
 	private var page: Page
 	private var tabBarManager: TabBarManager
+
 	
 	init(
 		page: Page,
@@ -49,21 +53,7 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 		self.tabBarManager = tabBarManager
 	}
 	
-	@ViewBuilder
-	func view() -> some View {
-		switch self.page {
-		case .viewInt:
-			assembly.assemblyViewInt(.init(value: 100), output: ViewIntOutput(coordinator: self))
-		case .viewDouble:
-			assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
-		case .viewString:
-			assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
-				.navigationDestination(for: ThirdFlowCoordinator.self) { [pathManager] coordinator in
-					coordinator.view(pathManager: pathManager)
-				}
-				
-		}
-	}
+	//MARK: Tab Bar
 	
 	func selectNewTab(index: Int) {
 		self.tabBarManager.selectedTabIndex = index
@@ -71,6 +61,22 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	
 	//MARK:  Show Views
 	
+	@ViewBuilder
+	func view() -> some View {
+		switch self.page {
+		case .viewInt:
+			assembly.assemblyViewInt(.init(value: 100, output: ViewIntOutput(coordinator: self)))
+		case .viewDouble:
+			assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
+		case .viewString:
+			assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
+				.navigationDestination(for: ThirdFlowCoordinator.self) { [pathManager] coordinator in
+					coordinator.view(pathManager: pathManager)
+				}
+		}
+			
+	}
+
 	func showViewString() {
 		self.page = .viewString
 		self.pathManager.push(self)
@@ -91,7 +97,22 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 		self.pathManager.push(secondCoordinator)
 	}
 	
+	// MARK: Sheets
+	
+	func showDoubleViewSheet() {
+		let viewDouble = assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
+		self.pathManager.sheetAction = .viewDouble(viewDouble)
+	}
+	
+	// MARK: FullScreenCover
+	
+	func showFullScreenCoverViewString() {
+		let viewString = assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
+		self.pathManager.fullScreenCover = .viewString(viewString)
+	}
+	
 	// MARK: Hashable
+	
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
 	}

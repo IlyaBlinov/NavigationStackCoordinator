@@ -9,13 +9,38 @@ import SwiftUI
 import Combine
 
 
+enum SheetAction: Identifiable {
+	
+	case viewDouble(ViewDouble)
+	
+	var id: UUID {
+		UUID()
+	}
+}
+
+
+enum FullScreenCoverAction: Identifiable {
+	
+	case viewString(ViewString)
+	
+	var id: UUID {
+		UUID()
+	}
+}
+
 final class PathManager: ObservableObject {
+	
 	var pathPublisher: Published<NavigationPath>.Publisher { $path }
 	
 	
 	private let savePath = URL.documentsDirectory.appending(path: "SavedPath_FirstTabPath")
 	
 	@Published var path: NavigationPath = NavigationPath()
+	
+	@Published var sheetAction: SheetAction?
+	
+	@Published var fullScreenCover: FullScreenCoverAction?
+	
 	private var savedPath: NavigationPath = NavigationPath()
 	
 	private var previousPath: NavigationPath = NavigationPath()

@@ -39,7 +39,20 @@ final class SecondFlowCoordinator: Hashable {
 	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			ViewInt().configure(.init(value: 100), output: ViewIntOutput(pathManager: pathManager))
+			ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
+		case .viewDouble:
+			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
+		case .viewString:
+			ViewString().configure(.init(value: "Second Flow"), output: ViewStringOutput(pathManager: pathManager))
+		}
+	}
+	
+	
+	@ViewBuilder
+	func sheet() -> some View {
+		switch self.page {
+		case .viewInt:
+			ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
 		case .viewDouble:
 			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
 		case .viewString:
@@ -65,6 +78,10 @@ final class SecondFlowCoordinator: Hashable {
 
 extension SecondFlowCoordinator {
 	final class ViewIntOutput: IViewIntOutput {
+		func presentDoubleViewSheet() {
+			
+		}
+		
 		
 		let pathManager: PathManager
 		

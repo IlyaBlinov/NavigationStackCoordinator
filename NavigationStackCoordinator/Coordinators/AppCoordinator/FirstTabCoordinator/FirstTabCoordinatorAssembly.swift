@@ -34,12 +34,16 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 	}
 	
 	func assemblyFirstFlowCoordinator() -> FirstFlowCoordinator {
+		let assembly = makeFirstFlowAssembly()
+		let coordinator =
 		FirstFlowCoordinator(
 			page: .viewInt,
 			pathManager: pathManager,
-			assembly: makeFirstFlowAssembly(), 
+			assembly: assembly,
 			tabBarManager: tabBarManager
 		)
+		assembly.coordinator = coordinator
+		return coordinator
 	}
 	
 	func assemblyFirstTabView(model: FirstTabViewModel.SceneInput) -> FirstTabView {
