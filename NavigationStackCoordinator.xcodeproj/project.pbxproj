@@ -60,6 +60,7 @@
 		6F9A47272C33C9ED009983A3 /* TabBarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47262C33C9ED009983A3 /* TabBarManager.swift */; };
 		6F9A472B2C359BEB009983A3 /* ViewIntPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A472A2C359BEB009983A3 /* ViewIntPresenter.swift */; };
 		6F9A472D2C35A690009983A3 /* PresentationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A472C2C35A690009983A3 /* PresentationScene.swift */; };
+		6F9A47312C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47302C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		6F9A47262C33C9ED009983A3 /* TabBarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarManager.swift; sourceTree = "<group>"; };
 		6F9A472A2C359BEB009983A3 /* ViewIntPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntPresenter.swift; sourceTree = "<group>"; };
 		6F9A472C2C35A690009983A3 /* PresentationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationScene.swift; sourceTree = "<group>"; };
+		6F9A47302C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				6F9A46F92C2DD86B009983A3 /* SecondFlowCoordinator.swift */,
+				6F9A47302C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift */,
 			);
 			path = SecondFlowCoordinator;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				6F9A46FA2C2DD86B009983A3 /* SecondFlowCoordinator.swift in Sources */,
 				6F9A46E62C2D2F71009983A3 /* TabItemPreferenceKey.swift in Sources */,
 				6F9A47132C3166B1009983A3 /* MainContainer.swift in Sources */,
+				6F9A47312C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift in Sources */,
 				6F9A47272C33C9ED009983A3 /* TabBarManager.swift in Sources */,
 				6F9A46D02C2D2F3D009983A3 /* ViewInt.swift in Sources */,
 				6F9A46CB2C2D2F3D009983A3 /* ViewDouble.swift in Sources */,
