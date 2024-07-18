@@ -10,10 +10,9 @@ import Foundation
 extension FirstFlowCoordinator {
 	final class ViewIntOutput: IViewIntOutput {
 		
-		let coordinator: FirstFlowCoordinator
+		let coordinator: IFirstFlowCoordinator
 		
-		
-		init(coordinator: FirstFlowCoordinator) {
+		init(coordinator: IFirstFlowCoordinator) {
 			self.coordinator = coordinator
 		}
 		
@@ -21,8 +20,8 @@ extension FirstFlowCoordinator {
 			coordinator.showViewDouble()
 		}
 		
-		func presentDoubleViewSheet() {
-			coordinator.showDoubleViewSheet()
+		func presentFirstSheet() {
+			coordinator.showFirstSheet()
 		}
 		
 	}

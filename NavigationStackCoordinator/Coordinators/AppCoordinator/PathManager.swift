@@ -19,6 +19,7 @@ enum SheetAction: Identifiable {
 }
 
 
+
 enum FullScreenCoverAction: Identifiable {
 	
 	case viewString(ViewString)
@@ -37,7 +38,11 @@ final class PathManager: ObservableObject {
 	
 	@Published var path: NavigationPath = NavigationPath()
 	
-	@Published var sheetAction: SheetAction?
+//	@Published var sheetAction: SheetAction?
+//	
+//	@Published var sheetCoordinator: SheetCoordinator?
+	
+	@Published var sheet: AnyHashable?
 	
 	@Published var fullScreenCover: FullScreenCoverAction?
 	

@@ -6,3 +6,24 @@
 //
 
 import Foundation
+
+extension SecondFlowCoordinator {
+	final class ViewIntOutput: IViewIntOutput {
+		
+		let coordinator: ISecondFlowCoordinator
+		
+		
+		init(coordinator: ISecondFlowCoordinator) {
+			self.coordinator = coordinator
+		}
+		
+		func pushNextScreen() {
+			coordinator.showViewDouble()
+		}
+		
+		func presentFirstSheet() {
+			coordinator.showSecondSheet()
+		}
+		
+	}
+}

@@ -13,6 +13,8 @@ struct FirstTabCoordinatorView<R: View>: View {
 	
 	@StateObject private var  pathManager: PathManager
 	
+	@State private var sheet: AnyHashable?
+	
 	private let coordinator: FirstTabCoordinator
 	
 	private let rootView: R
@@ -39,19 +41,23 @@ struct FirstTabCoordinatorView<R: View>: View {
 					coordinator.view()
 				}
 		}
-		.sheet(item: $pathManager.sheetAction) { action in
-				showSheetView(action)
-		}
+		.sheet(
+			item: $sheet,
+			type: FirstFlowSheetCoordinator.self,
+			content: { coordinator in
+			coordinator.view()
+		})
+		.sheet(
+			item: $sheet,
+			type: SecondFlowSheetCoordinator.self,
+			content: { coordinator in
+				coordinator.view()
+			})
+		.onReceive(pathManager.$sheet, perform: { sheet in
+			self.sheet = sheet
+		})
 		.fullScreenCover(item: $pathManager.fullScreenCover) { action in
 			showFullScreenCoverView(action)
-		}
-	}
-	
-	@ViewBuilder
-	private func showSheetView(_ action: SheetAction) -> some View {
-		switch action {
-		case .viewDouble(let viewDouble):
-			viewDouble
 		}
 	}
 	

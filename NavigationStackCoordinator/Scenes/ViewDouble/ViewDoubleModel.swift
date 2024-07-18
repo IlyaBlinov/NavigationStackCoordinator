@@ -9,7 +9,7 @@ import Foundation
 
 enum ViewDoubleModel {
 	
-	struct SceneInput: Hashable, Identifiable, Codable {
+	struct SceneInput: Hashable, Identifiable {
 		static func == (lhs: ViewDoubleModel.SceneInput, rhs: ViewDoubleModel.SceneInput) -> Bool {
 			lhs.id == rhs.id
 		}
@@ -20,11 +20,11 @@ enum ViewDoubleModel {
 		
 		let id: UUID
 		let value: Double
-		//let output: IViewDoubleOutput
+		let output: IViewDoubleOutput
 		
-		init(value: Double) {
+		init(value: Double, output: IViewDoubleOutput) {
 			self.value = value
-			//self.output = output
+			self.output = output
 			self.id = UUID()
 		}
 	}

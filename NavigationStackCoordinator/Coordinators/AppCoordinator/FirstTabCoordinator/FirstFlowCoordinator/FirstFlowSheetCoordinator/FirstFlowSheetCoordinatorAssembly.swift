@@ -7,27 +7,22 @@
 
 import Foundation
 
-protocol IFirstFlowSheetCoordinatorAssembly {
-	func assemblyViewInt(_ model: ViewIntModel.SceneInput) -> ViewInt
-	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput, output: IViewDoubleOutput) -> ViewDouble
-	func assemblyString(_ model: ViewStringModel.SceneInput, output: IViewStringOutput) -> ViewString
+protocol IFirstFlowSheetCoordinatorAssembly: AnyObject {
+	func assemblyFirstSheet(_ model: FirstSheetModel.SceneInput) -> FirstSheet
+	func assemblySecondSheet(_ model: SecondSheetModel.SceneInput) -> SecondSheet
 }
 
 
 final class FirstFlowSheetCoordinatorAssembly: IFirstFlowSheetCoordinatorAssembly {
 	
-	weak var coordinator: FirstFlowSheetCoordinator!
+	weak var coordinator: IFirstFlowSheetCoordinator!
 	
-	func assemblyViewInt(_ model: ViewIntModel.SceneInput) -> ViewInt{
-		ViewIntAssembly().assembly(model: model)
+	func assemblyFirstSheet(_ model: FirstSheetModel.SceneInput) -> FirstSheet {
+		FirstSheetAssembly().assembly(model: model)
 	}
 	
-	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput, output: IViewDoubleOutput) -> ViewDouble  {
-		ViewDoubleAssembly().assembly(model: model, output: output)
-	}
-	
-	func assemblyString(_ model: ViewStringModel.SceneInput, output: IViewStringOutput) -> ViewString  {
-		ViewStringAssembly().assembly(model: model, output: output)
+	func assemblySecondSheet(_ model: SecondSheetModel.SceneInput) -> SecondSheet {
+		SecondSheetAssembly().assembly(model: model)
 	}
 	
 }

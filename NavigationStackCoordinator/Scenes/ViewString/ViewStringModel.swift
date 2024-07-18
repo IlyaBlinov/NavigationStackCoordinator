@@ -9,7 +9,7 @@ import Foundation
 
 enum ViewStringModel {
 	
-	struct SceneInput: Hashable, Identifiable, Codable {
+	struct SceneInput: Hashable, Identifiable {
 		static func == (lhs: ViewStringModel.SceneInput, rhs: ViewStringModel.SceneInput) -> Bool {
 			lhs.id == rhs.id
 		}
@@ -20,12 +20,12 @@ enum ViewStringModel {
 		
 		let id: UUID
 		let value: String
-		//let output: IViewStringOutput
+		let output: IViewStringOutput
 		
 		
-		init(value: String) {
+		init(value: String, output: IViewStringOutput) {
 			self.value = value
-		//	self.output = output
+			self.output = output
 			self.id = UUID()
 		}
 	}

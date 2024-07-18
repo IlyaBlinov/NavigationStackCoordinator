@@ -9,5 +9,5 @@ import Foundation
 
 protocol IViewIntOutput {
 	func pushNextScreen()
-	func presentDoubleViewSheet()
+	func presentFirstSheet()
 }

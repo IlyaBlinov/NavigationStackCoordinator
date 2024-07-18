@@ -9,10 +9,10 @@ import Foundation
 
 extension FirstFlowCoordinator {
 	final class FirstTabOutput: IFirstTabViewOutput {
-		let coordinator: FirstFlowCoordinator
+		let coordinator: IFirstFlowCoordinator
 		
 		
-		init(coordinator: FirstFlowCoordinator) {
+		init(coordinator: IFirstFlowCoordinator) {
 			self.coordinator = coordinator
 		}
 		

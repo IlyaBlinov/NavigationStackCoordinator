@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+protocol ISecondSheetPresenter {
+	func start(_ state: SecondSheetModel.Start.State)
+}
+
+final class SecondSheetPresenter: ISecondSheetPresenter {
+	
+	var view: ISecondSheet?
+	
+	func start(_ state: SecondSheetModel.Start.State) {}
+	
+	
+}

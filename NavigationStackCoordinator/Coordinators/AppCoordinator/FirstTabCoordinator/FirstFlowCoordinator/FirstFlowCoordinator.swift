@@ -8,9 +8,7 @@
 import Foundation
 import SwiftUI
 
-
-
-protocol IFirstFlowCoordinator {
+protocol IFirstFlowCoordinator: AnyObject {
 	
 	func showViewString()
 	
@@ -22,7 +20,9 @@ protocol IFirstFlowCoordinator {
 	
 	func selectNewTab(index: Int)
 	
-	func showDoubleViewSheet()
+	func showFirstSheet()
+	
+	func dismissSheet()
 	
 }
 
@@ -67,9 +67,9 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 		case .viewInt:
 			assembly.assemblyViewInt(.init(value: 100, output: ViewIntOutput(coordinator: self)))
 		case .viewDouble:
-			assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
+			assembly.assemblyViewDouble(.init(value: 999.0, output: ViewDoubleOutput(coordinator: self)))
 		case .viewString:
-			assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
+			assembly.assemblyString(.init(value: "FirstFlow", output: ViewStringOutput(coordinator: self)))
 				.navigationDestination(for: ThirdFlowCoordinator.self) { [pathManager] coordinator in
 					coordinator.view(pathManager: pathManager)
 				}
@@ -93,21 +93,30 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	}
 	
 	func showSecondFlowCoordinatorView() {
-		let secondCoordinator = SecondFlowCoordinator(page: .viewString, pathManager: self.pathManager)
+		let secondCoordinator = assembly.assemblySecondFlowCoordinator(pathManager: pathManager, tabBarManager: tabBarManager)
 		self.pathManager.push(secondCoordinator)
 	}
 	
 	// MARK: Sheets
 	
-	func showDoubleViewSheet() {
-		let viewDouble = assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
-		self.pathManager.sheetAction = .viewDouble(viewDouble)
+	func showFirstSheet() {
+		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .firstSheet)
+		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+	}
+	
+	func showSecondSheet() {
+		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
+		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+	}
+	
+	func dismissSheet() {
+		self.pathManager.sheet = nil
 	}
 	
 	// MARK: FullScreenCover
 	
 	func showFullScreenCoverViewString() {
-		let viewString = assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
+		let viewString = assembly.assemblyString(.init(value: "FirstFlow", output: ViewStringOutput(coordinator: self)))
 		self.pathManager.fullScreenCover = .viewString(viewString)
 	}
 	

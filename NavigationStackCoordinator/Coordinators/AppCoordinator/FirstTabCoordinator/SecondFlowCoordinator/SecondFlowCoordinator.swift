@@ -8,57 +8,104 @@
 import Foundation
 import SwiftUI
 
-enum SecondFlowPage {
-	case viewInt, viewString, viewDouble
+protocol ISecondFlowCoordinator: AnyObject {
+	
+	func showViewString()
+	
+	func showViewInt()
+	
+	func showViewDouble()
+	
+	func selectNewTab(index: Int)
+	
+	func showSecondSheet()
+	
+	func showFirstSheet()
 }
 
-final class SecondFlowCoordinator: Hashable {
+
+
+
+final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 	
-	private let pathManager: PathManager
-	
-	private var id: UUID
-	private var output: Output?
-	private var page: SecondFlowPage
-	
-	struct Output {
-		var goToNextCoordinator: () -> Void
+	enum Page: CaseIterable {
+		case viewInt, viewString, viewDouble
 	}
 	
+	private let pathManager: PathManager
+	private let assembly: ISecondFlowCoordinatorAssembly
+	
+	private let id: UUID
+	private var page: Page
+	private var tabBarManager: TabBarManager
+	
+	
 	init(
-		page: SecondFlowPage,
+		page: Page,
 		pathManager: PathManager,
-		output: Output? = nil
+		assembly: ISecondFlowCoordinatorAssembly,
+		tabBarManager: TabBarManager
 	) {
 		id = UUID()
 		self.page = page
-		self.output = output
 		self.pathManager = pathManager
+		self.assembly = assembly
+		self.tabBarManager = tabBarManager
 	}
 	
 	@ViewBuilder
 	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
+			ViewInt().configure(.init(value: 100, output: ViewIntOutput(coordinator: self)))
 		case .viewDouble:
-			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
+			ViewDouble().configure(.init(value: 999.0, output: ViewDoubleOutput(coordinator: self)))
 		case .viewString:
-			ViewString().configure(.init(value: "Second Flow"), output: ViewStringOutput(pathManager: pathManager))
+			ViewString().configure(.init(value: "Second Flow", output: ViewStringOutput(coordinator: self)))
 		}
 	}
 	
+	//MARK: Tab Bar
 	
-	@ViewBuilder
-	func sheet() -> some View {
-		switch self.page {
-		case .viewInt:
-			ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
-		case .viewDouble:
-			ViewDouble().configure(.init(value: 999.0), output: ViewDoubleOutput(pathManager: pathManager))
-		case .viewString:
-			ViewString().configure(.init(value: "Second Flow"), output: ViewStringOutput(pathManager: pathManager))
-		}
+	func selectNewTab(index: Int) {
+		self.tabBarManager.selectedTabIndex = index
 	}
+	
+	//MARK:  Show Views
+	
+	func showViewString() {
+		self.page = .viewString
+		self.pathManager.push(self)
+	}
+	
+	func showViewInt() {
+		self.page = .viewInt
+		self.pathManager.push(self)
+	}
+	
+	func showViewDouble() {
+		self.page = .viewDouble
+		self.pathManager.push(self)
+	}
+	
+	
+	// MARK: Sheets
+	
+	func showFirstSheet() {
+		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .firstSheet)
+		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+	}
+	
+	func showSecondSheet() {
+		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
+		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+	}
+	
+	func dismissSheet() {
+		self.pathManager.sheet = nil
+	}
+	
+	// MARK: Hashable
 	
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
@@ -73,71 +120,5 @@ final class SecondFlowCoordinator: Hashable {
 	
 	func push<V>(_ value: V) where V : Hashable {
 		pathManager.push(value)
-	}
-}
-
-extension SecondFlowCoordinator {
-	final class ViewIntOutput: IViewIntOutput {
-		func presentDoubleViewSheet() {
-			
-		}
-		
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(SecondFlowCoordinator(page: .viewDouble, pathManager: pathManager))
-		}
-		
-		
-	}
-	
-	
-	final class ViewDoubleOutput: IViewDoubleOutput {
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(SecondFlowCoordinator(page: .viewString, pathManager: pathManager))
-		}
-		
-		
-	}
-	
-	
-	final class ViewStringOutput: IViewStringOutput {
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(SecondFlowCoordinator(page: .viewInt, pathManager: pathManager))
-		}
-		
-		
-	}
-	
-	
-	final class FirstTabOutput: IFirstTabViewOutput {
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(SecondFlowCoordinator(page: .viewInt, pathManager: pathManager))
-		}
 	}
 }

@@ -10,10 +10,10 @@ import Foundation
 extension FirstFlowCoordinator {
 	final class ViewDoubleOutput: IViewDoubleOutput {
 		
-		let coordinator: FirstFlowCoordinator
+		let coordinator: IFirstFlowCoordinator
 		
 		
-		init(coordinator: FirstFlowCoordinator) {
+		init(coordinator: IFirstFlowCoordinator) {
 			self.coordinator = coordinator
 		}
 		

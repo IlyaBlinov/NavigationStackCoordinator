@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+extension SecondFlowCoordinator {
+	final class ViewDoubleOutput: IViewDoubleOutput {
+		
+		let coordinator: ISecondFlowCoordinator
+		
+		
+		init(coordinator: ISecondFlowCoordinator) {
+			self.coordinator = coordinator
+		}
+		
+		func pushNextScreen() {
+			coordinator.showViewString()
+		}
+		
+		
+	}
+}

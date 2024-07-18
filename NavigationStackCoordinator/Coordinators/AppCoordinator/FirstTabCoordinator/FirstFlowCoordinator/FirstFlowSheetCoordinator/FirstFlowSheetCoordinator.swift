@@ -7,22 +7,29 @@
 
 import SwiftUI
 
-final class FirstFlowSheetCoordinator: Hashable, Identifiable {
+protocol IFirstFlowSheetCoordinator: AnyObject {
+	
+	func showFirstSheet()
+	
+	func showSecondSheet()
+}
+
+final class FirstFlowSheetCoordinator: Hashable, Identifiable, IFirstFlowSheetCoordinator {
 	
 	enum Sheet {
-		case viewInt, viewString, viewDouble
+		case firstSheet, secondSheet
 	}
 	
 	private let assembly: IFirstFlowSheetCoordinatorAssembly
+	private var sheet: Sheet
 	
 	let id: UUID
-	private var sheet: Sheet
 	
 	init(
 		sheet: Sheet,
 		assembly: IFirstFlowSheetCoordinatorAssembly
 	) {
-		id = UUID()
+		self.id = UUID()
 		self.sheet = sheet
 		self.assembly = assembly
 	}
@@ -30,28 +37,20 @@ final class FirstFlowSheetCoordinator: Hashable, Identifiable {
 	@ViewBuilder
 	func view() -> some View {
 		switch self.sheet {
-		case .viewInt:
-			assembly.assemblyViewInt(.init(value: 100, output: ViewIntOutput(coordinator: self)))
-		case .viewDouble:
-			assembly.assemblyViewDouble(.init(value: 999.0), output: ViewDoubleOutput(coordinator: self))
-		case .viewString:
-			assembly.assemblyString(.init(value: "FirstFlow"), output: ViewStringOutput(coordinator: self))
+		case .firstSheet:
+			assembly.assemblyFirstSheet(FirstSheetModel.SceneInput(value: 15))
+		case .secondSheet:
+			assembly.assemblySecondSheet(SecondSheetModel.SceneInput(value: 15))
 		}
-		
 	}
 	
-	func showViewString() {
-		self.sheet = .viewString
+	
+	func showFirstSheet() {
+		self.sheet = .firstSheet
 	}
 	
-	func showViewInt() {
-		self.sheet = .viewInt
-		
-	}
-	
-	func showViewDouble() {
-		self.sheet = .viewDouble
-		
+	func showSecondSheet() {
+		self.sheet = .secondSheet
 	}
 	
 	// MARK: Hashable

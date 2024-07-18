@@ -37,8 +37,7 @@ final class ViewIntInteractor: IViewIntInteractor {
 	}
 	
 	func showSheet(_ event: ViewIntModel.ShowSheet.Event) {
-		output.presentDoubleViewSheet()
-	//	presenter.showSheet(ViewIntModel.ShowSheet.State())
+		output.presentFirstSheet()
 	}
 	
 }

@@ -7,12 +7,36 @@
 
 import SwiftUI
 
+protocol ISecondSheet {
+	
+}
+
+extension SecondSheet: ISecondSheet {}
+
 struct SecondSheet: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+	
+	var interactor: ISecondSheetInteractor!
+	
+	@ObservedObject var store: SecondSheetModel.Store = SecondSheetModel.Store()
+	
+	@Environment(\.dismiss) private var dismiss
+	
+	var body: some View {
+		VStack {
+			Text("I'm SecondSheet")
+			Text("Dismiss Sheet")
+				.padding()
+				.foregroundColor(.white)
+				.background(Color.red)
+				.onTapGesture {
+					interactor.dismiss(SecondSheetModel.Dismiss.Event())
+					dismiss()
+				}
+			
+		}
+	}
 }
 
 #Preview {
-    SecondSheet()
+	SecondSheet()
 }
