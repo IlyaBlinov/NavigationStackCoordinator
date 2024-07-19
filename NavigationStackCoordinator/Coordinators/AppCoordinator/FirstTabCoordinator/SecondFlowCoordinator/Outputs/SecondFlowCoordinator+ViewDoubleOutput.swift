@@ -9,6 +9,14 @@ import Foundation
 
 extension SecondFlowCoordinator {
 	final class ViewDoubleOutput: IViewDoubleOutput {
+		func showLoader() {
+			
+		}
+		
+		func hideLoader() {
+			
+		}
+		
 		
 		let coordinator: ISecondFlowCoordinator
 		

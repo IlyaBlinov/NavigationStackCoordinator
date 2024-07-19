@@ -25,6 +25,16 @@ struct ViewDouble: View {
 				.onTapGesture {
 					interactor.pushNextScreen()
 				}
+			Text("Show Loader")
+				.padding(20)
+				.foregroundColor(.white)
+				.background(Color.blue)
+				.onTapGesture {
+					interactor.requestToServer()
+				}
+		}
+		.task {
+			interactor.requestToServer()
 		}
 	}
 }

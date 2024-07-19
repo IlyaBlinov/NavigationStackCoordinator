@@ -32,6 +32,7 @@ enum ViewDoubleModel {
 	final class Store: ObservableObject {
 		
 		@Published var value: Double = 0.0
+		@Published var taskID: UUID = UUID()
 		
 		deinit {
 			print("deinit ViewDoubleModel.Store")

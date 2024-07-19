@@ -14,6 +14,7 @@ struct FirstTabCoordinatorView<R: View>: View {
 	@StateObject private var  pathManager: PathManager
 	
 	@State private var sheet: AnyHashable?
+	@State private var fullScreenCover: AnyHashable?
 	
 	private let coordinator: FirstTabCoordinator
 	
@@ -53,22 +54,19 @@ struct FirstTabCoordinatorView<R: View>: View {
 			content: { coordinator in
 				coordinator.view()
 			})
+		.fullScreenCover(
+			item: $fullScreenCover,
+			type: FirstFlowFullScreenCoverCoordinator.self,
+			content: { coordinator in
+				coordinator.view()
+			})
 		.onReceive(pathManager.$sheet, perform: { sheet in
 			self.sheet = sheet
 		})
-		.fullScreenCover(item: $pathManager.fullScreenCover) { action in
-			showFullScreenCoverView(action)
-		}
+		.onReceive(pathManager.$fullScreenCover, perform: { fullScreenCover in
+			self.fullScreenCover = fullScreenCover
+		})
 	}
-	
-	@ViewBuilder
-	private func showFullScreenCoverView(_ action: FullScreenCoverAction) -> some View {
-		switch action {
-		case .viewString(let viewString):
-			viewString
-		}
-	}
-
 	
 }
 

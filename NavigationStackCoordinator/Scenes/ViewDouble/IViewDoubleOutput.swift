@@ -9,4 +9,6 @@ import Foundation
 
 protocol IViewDoubleOutput {
 	func pushNextScreen()
+	func showLoader()
+	func hideLoader()
 }

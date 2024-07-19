@@ -24,6 +24,10 @@ protocol IFirstFlowCoordinator: AnyObject {
 	
 	func dismissSheet()
 	
+	func showLoader()
+	
+	func dismissFullScreenCover()
+	
 }
 
 final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
@@ -105,8 +109,8 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	}
 	
 	func showSecondSheet() {
-		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
-		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+		let coordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
+		self.pathManager.sheet = AnyHashable(coordinator)
 	}
 	
 	func dismissSheet() {
@@ -115,9 +119,13 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	
 	// MARK: FullScreenCover
 	
-	func showFullScreenCoverViewString() {
-		let viewString = assembly.assemblyString(.init(value: "FirstFlow", output: ViewStringOutput(coordinator: self)))
-		self.pathManager.fullScreenCover = .viewString(viewString)
+	func showLoader() {
+		let coordinator = assembly.assemblyFullScreenCoverCoordinator(fullScreenCover: .loader)
+		self.pathManager.fullScreenCover = AnyHashable(coordinator)
+	}
+	
+	func dismissFullScreenCover() {
+		self.pathManager.fullScreenCover = nil
 	}
 	
 	// MARK: Hashable

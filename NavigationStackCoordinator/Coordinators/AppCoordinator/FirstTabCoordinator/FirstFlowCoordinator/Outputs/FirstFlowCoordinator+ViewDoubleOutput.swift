@@ -21,6 +21,14 @@ extension FirstFlowCoordinator {
 			coordinator.showViewString()
 		}
 		
+		func showLoader() {
+			coordinator.showLoader()
+		}
+		
+		func hideLoader() {
+			coordinator.dismissFullScreenCover()
+		}
+		
 		
 	}
 }

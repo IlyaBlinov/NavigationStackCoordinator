@@ -12,6 +12,7 @@ protocol IFirstFlowCoordinatorAssembly: AnyObject {
 	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput) -> ViewDouble
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString
 	func assemblySheetCoordinator(sheet: FirstFlowSheetCoordinator.Sheet) -> FirstFlowSheetCoordinator
+	func assemblyFullScreenCoverCoordinator(fullScreenCover: FirstFlowFullScreenCoverCoordinator.FullScreenCover) -> FirstFlowFullScreenCoverCoordinator
 	func assemblySecondFlowCoordinator(pathManager: PathManager, tabBarManager: TabBarManager) -> SecondFlowCoordinator
 }
 
@@ -34,9 +35,16 @@ final class FirstFlowCoordinatorAssembly: IFirstFlowCoordinatorAssembly {
 	
 	func assemblySheetCoordinator(sheet: FirstFlowSheetCoordinator.Sheet) -> FirstFlowSheetCoordinator {
 		let assembly = FirstFlowSheetCoordinatorAssembly()
-		let sheetCoordinator = FirstFlowSheetCoordinator(sheet: sheet, assembly: assembly)
-		assembly.coordinator = sheetCoordinator
-		return sheetCoordinator
+		let coordinator = FirstFlowSheetCoordinator(sheet: sheet, assembly: assembly)
+		assembly.coordinator = coordinator
+		return coordinator
+	}
+	
+	func assemblyFullScreenCoverCoordinator(fullScreenCover: FirstFlowFullScreenCoverCoordinator.FullScreenCover) -> FirstFlowFullScreenCoverCoordinator {
+		let assembly = FirstFlowFullScreenCoverAssembly()
+		let coordinator = FirstFlowFullScreenCoverCoordinator(fullScreenCover: .loader, assembly: assembly)
+		assembly.coordinator = coordinator
+		return coordinator
 	}
 	
 	func assemblySecondFlowCoordinator(pathManager: PathManager, tabBarManager: TabBarManager) -> SecondFlowCoordinator {

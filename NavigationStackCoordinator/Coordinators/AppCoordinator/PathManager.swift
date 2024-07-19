@@ -44,7 +44,7 @@ final class PathManager: ObservableObject {
 	
 	@Published var sheet: AnyHashable?
 	
-	@Published var fullScreenCover: FullScreenCoverAction?
+	@Published var fullScreenCover: AnyHashable?
 	
 	private var savedPath: NavigationPath = NavigationPath()
 	

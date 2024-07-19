@@ -71,6 +71,14 @@ extension ThirdFlowCoordinator {
 	
 	
 	final class ViewDoubleOutput: IViewDoubleOutput {
+		func showLoader() {
+			
+		}
+		
+		func hideLoader() {
+			
+		}
+		
 		
 		let pathManager: PathManager
 		

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6F68C5022C3BAE3F00219D8D /* Binding+AnyHashable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5012C3BAE3F00219D8D /* Binding+AnyHashable.swift */; };
-		6F68C5052C3BAEFC00219D8D /* View+sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5042C3BAEFC00219D8D /* View+sheet.swift */; };
+		6F68C5052C3BAEFC00219D8D /* View+Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5042C3BAEFC00219D8D /* View+Sheet.swift */; };
 		6F68C5072C3BB07E00219D8D /* FirstFlowSheetCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5062C3BB07E00219D8D /* FirstFlowSheetCoordinatorAssembly.swift */; };
 		6F68C5092C3BB09F00219D8D /* FirstFlowSheetCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5082C3BB09F00219D8D /* FirstFlowSheetCoordinator.swift */; };
 		6F68C5132C3C6BD900219D8D /* SecondFlowCoordinator+ViewIntOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5122C3C6BD900219D8D /* SecondFlowCoordinator+ViewIntOutput.swift */; };
@@ -26,6 +26,15 @@
 		6F68C53B2C496FED00219D8D /* SecondSheetInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C53A2C496FED00219D8D /* SecondSheetInteractor.swift */; };
 		6F68C53D2C496FFA00219D8D /* SecondSheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C53C2C496FFA00219D8D /* SecondSheetModel.swift */; };
 		6F68C53F2C49700E00219D8D /* SecondSheetAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C53E2C49700E00219D8D /* SecondSheetAssembly.swift */; };
+		6F68C5612C4A5A6700219D8D /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5602C4A5A6700219D8D /* Loader.swift */; };
+		6F68C5642C4A5ACC00219D8D /* LoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5632C4A5ACC00219D8D /* LoaderPresenter.swift */; };
+		6F68C5662C4A5ADA00219D8D /* LoaderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5652C4A5ADA00219D8D /* LoaderInteractor.swift */; };
+		6F68C5682C4A5AEA00219D8D /* LoaderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5672C4A5AEA00219D8D /* LoaderModel.swift */; };
+		6F68C56A2C4A5AF400219D8D /* LoaderAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5692C4A5AF400219D8D /* LoaderAssembly.swift */; };
+		6F68C56D2C4A5F1200219D8D /* FirstFlowFullScreenCoverCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C56C2C4A5F1200219D8D /* FirstFlowFullScreenCoverCoordinator.swift */; };
+		6F68C56F2C4A5F1C00219D8D /* FirstFlowFullScreenCoverAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C56E2C4A5F1C00219D8D /* FirstFlowFullScreenCoverAssembly.swift */; };
+		6F68C5722C4A677500219D8D /* View+FullScreenCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5712C4A677500219D8D /* View+FullScreenCover.swift */; };
+		6F68C5742C4A768400219D8D /* View+FirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5732C4A768400219D8D /* View+FirstAppear.swift */; };
 		6F9A46A82C2D272E009983A3 /* NavigationStackCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */; };
 		6F9A46AC2C2D272F009983A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AB2C2D272F009983A3 /* Assets.xcassets */; };
 		6F9A46B02C2D272F009983A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */; };
@@ -84,7 +93,7 @@
 
 /* Begin PBXFileReference section */
 		6F68C5012C3BAE3F00219D8D /* Binding+AnyHashable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Binding+AnyHashable.swift"; sourceTree = "<group>"; };
-		6F68C5042C3BAEFC00219D8D /* View+sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+sheet.swift"; sourceTree = "<group>"; };
+		6F68C5042C3BAEFC00219D8D /* View+Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Sheet.swift"; sourceTree = "<group>"; };
 		6F68C5062C3BB07E00219D8D /* FirstFlowSheetCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowSheetCoordinatorAssembly.swift; sourceTree = "<group>"; };
 		6F68C5082C3BB09F00219D8D /* FirstFlowSheetCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowSheetCoordinator.swift; sourceTree = "<group>"; };
 		6F68C5122C3C6BD900219D8D /* SecondFlowCoordinator+ViewIntOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SecondFlowCoordinator+ViewIntOutput.swift"; sourceTree = "<group>"; };
@@ -102,6 +111,15 @@
 		6F68C53A2C496FED00219D8D /* SecondSheetInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSheetInteractor.swift; sourceTree = "<group>"; };
 		6F68C53C2C496FFA00219D8D /* SecondSheetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSheetModel.swift; sourceTree = "<group>"; };
 		6F68C53E2C49700E00219D8D /* SecondSheetAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSheetAssembly.swift; sourceTree = "<group>"; };
+		6F68C5602C4A5A6700219D8D /* Loader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loader.swift; sourceTree = "<group>"; };
+		6F68C5632C4A5ACC00219D8D /* LoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderPresenter.swift; sourceTree = "<group>"; };
+		6F68C5652C4A5ADA00219D8D /* LoaderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderInteractor.swift; sourceTree = "<group>"; };
+		6F68C5672C4A5AEA00219D8D /* LoaderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderModel.swift; sourceTree = "<group>"; };
+		6F68C5692C4A5AF400219D8D /* LoaderAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderAssembly.swift; sourceTree = "<group>"; };
+		6F68C56C2C4A5F1200219D8D /* FirstFlowFullScreenCoverCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowFullScreenCoverCoordinator.swift; sourceTree = "<group>"; };
+		6F68C56E2C4A5F1C00219D8D /* FirstFlowFullScreenCoverAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstFlowFullScreenCoverAssembly.swift; sourceTree = "<group>"; };
+		6F68C5712C4A677500219D8D /* View+FullScreenCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FullScreenCover.swift"; sourceTree = "<group>"; };
+		6F68C5732C4A768400219D8D /* View+FirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+FirstAppear.swift"; sourceTree = "<group>"; };
 		6F9A46A42C2D272E009983A3 /* NavigationStackCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinatorApp.swift; sourceTree = "<group>"; };
 		6F9A46AB2C2D272F009983A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -176,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				6F68C5012C3BAE3F00219D8D /* Binding+AnyHashable.swift */,
-				6F68C5042C3BAEFC00219D8D /* View+sheet.swift */,
+				6F68C5752C4A76AE00219D8D /* View */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -240,6 +258,45 @@
 				6F68C53E2C49700E00219D8D /* SecondSheetAssembly.swift */,
 			);
 			path = SecondSheet;
+			sourceTree = "<group>";
+		};
+		6F68C5622C4A5A7D00219D8D /* FullScreenCovers */ = {
+			isa = PBXGroup;
+			children = (
+				6F68C56B2C4A5B0000219D8D /* Loader */,
+			);
+			path = FullScreenCovers;
+			sourceTree = "<group>";
+		};
+		6F68C56B2C4A5B0000219D8D /* Loader */ = {
+			isa = PBXGroup;
+			children = (
+				6F68C5632C4A5ACC00219D8D /* LoaderPresenter.swift */,
+				6F68C5652C4A5ADA00219D8D /* LoaderInteractor.swift */,
+				6F68C5672C4A5AEA00219D8D /* LoaderModel.swift */,
+				6F68C5692C4A5AF400219D8D /* LoaderAssembly.swift */,
+				6F68C5602C4A5A6700219D8D /* Loader.swift */,
+			);
+			path = Loader;
+			sourceTree = "<group>";
+		};
+		6F68C5702C4A5F2600219D8D /* FirstFlowFullScreenCoverCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				6F68C56C2C4A5F1200219D8D /* FirstFlowFullScreenCoverCoordinator.swift */,
+				6F68C56E2C4A5F1C00219D8D /* FirstFlowFullScreenCoverAssembly.swift */,
+			);
+			path = FirstFlowFullScreenCoverCoordinator;
+			sourceTree = "<group>";
+		};
+		6F68C5752C4A76AE00219D8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6F68C5042C3BAEFC00219D8D /* View+Sheet.swift */,
+				6F68C5712C4A677500219D8D /* View+FullScreenCover.swift */,
+				6F68C5732C4A768400219D8D /* View+FirstAppear.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		6F9A469B2C2D272E009983A3 = {
@@ -375,9 +432,10 @@
 		6F9A47042C2F01D2009983A3 /* FirstFlowCoordinator */ = {
 			isa = PBXGroup;
 			children = (
-				6F68C50A2C3BB0D700219D8D /* FirstFlowSheetCoordinator */,
 				6F9A47072C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift */,
 				6F9A46E92C2D302D009983A3 /* FirstFlowCoordinator.swift */,
+				6F68C5702C4A5F2600219D8D /* FirstFlowFullScreenCoverCoordinator */,
+				6F68C50A2C3BB0D700219D8D /* FirstFlowSheetCoordinator */,
 				6F9A47032C2F01C4009983A3 /* Outputs */,
 			);
 			path = FirstFlowCoordinator;
@@ -436,6 +494,7 @@
 				6F9A46C92C2D2F3D009983A3 /* ViewString */,
 				6F9A472C2C35A690009983A3 /* PresentationScene.swift */,
 				6F68C5292C49565800219D8D /* Sheets */,
+				6F68C5622C4A5A7D00219D8D /* FullScreenCovers */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -556,13 +615,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F68C56D2C4A5F1200219D8D /* FirstFlowFullScreenCoverCoordinator.swift in Sources */,
 				6F9A46E82C2D2FA5009983A3 /* MainView.swift in Sources */,
 				6F9A46CD2C2D2F3D009983A3 /* ViewDoubleInteractor.swift in Sources */,
 				6F9A46B72C2D27BA009983A3 /* PathManager.swift in Sources */,
 				6F9A47222C33C4BF009983A3 /* FirstFlowDeeplinkHandlersFactory.swift in Sources */,
 				6F9A46E22C2D2F71009983A3 /* CustomNavigationBarView.swift in Sources */,
+				6F68C5722C4A677500219D8D /* View+FullScreenCover.swift in Sources */,
 				6F9A47062C2F0212009983A3 /* FirstFlowCoordinator+FirstTabOutput.swift in Sources */,
+				6F68C5742C4A768400219D8D /* View+FirstAppear.swift in Sources */,
 				6F9A46EA2C2D302D009983A3 /* FirstFlowCoordinator.swift in Sources */,
+				6F68C5612C4A5A6700219D8D /* Loader.swift in Sources */,
 				6F68C51A2C3C72C300219D8D /* SecondFlowSheetCoordinator.swift in Sources */,
 				6F9A47202C33BE7D009983A3 /* ViewDoubleHandler.swift in Sources */,
 				6F9A471B2C33B8EE009983A3 /* ViewStringHandler.swift in Sources */,
@@ -571,7 +634,7 @@
 				6F9A471E2C33BE61009983A3 /* ViewIntHandler.swift in Sources */,
 				6F9A46FE2C2F00DE009983A3 /* FirstFlowCoordinator+ViewIntOutput.swift in Sources */,
 				6F9A46ED2C2D30E1009983A3 /* AppCoordinator.swift in Sources */,
-				6F68C5052C3BAEFC00219D8D /* View+sheet.swift in Sources */,
+				6F68C5052C3BAEFC00219D8D /* View+Sheet.swift in Sources */,
 				6F9A46CA2C2D2F3D009983A3 /* IViewDoubleOutput.swift in Sources */,
 				6F9A472B2C359BEB009983A3 /* ViewIntPresenter.swift in Sources */,
 				6F9A46F82C2DD6F1009983A3 /* IFirstTabViewOutput.swift in Sources */,
@@ -581,12 +644,14 @@
 				6F9A47102C315CE7009983A3 /* FirstTabCoordinatorAssembly.swift in Sources */,
 				6F9A46D52C2D2F3D009983A3 /* ViewString.swift in Sources */,
 				6F9A46E32C2D2F71009983A3 /* TabBarItemView.swift in Sources */,
+				6F68C56F2C4A5F1C00219D8D /* FirstFlowFullScreenCoverAssembly.swift in Sources */,
 				6F9A46E12C2D2F71009983A3 /* CustomNavigationBarContainerView.swift in Sources */,
 				6F9A46FC2C2DE072009983A3 /* ThirdFlowCoordinator.swift in Sources */,
 				6F68C52F2C4956C000219D8D /* FirstSheetInteractor.swift in Sources */,
 				6F9A46FA2C2DD86B009983A3 /* SecondFlowCoordinator.swift in Sources */,
 				6F9A46E62C2D2F71009983A3 /* TabItemPreferenceKey.swift in Sources */,
 				6F68C5262C49562500219D8D /* FirstSheet.swift in Sources */,
+				6F68C5662C4A5ADA00219D8D /* LoaderInteractor.swift in Sources */,
 				6F68C5312C4956CE00219D8D /* FirstSheetModel.swift in Sources */,
 				6F9A47132C3166B1009983A3 /* MainContainer.swift in Sources */,
 				6F9A47312C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift in Sources */,
@@ -597,6 +662,7 @@
 				6F9A46CB2C2D2F3D009983A3 /* ViewDouble.swift in Sources */,
 				6F9A46F42C2DD6F1009983A3 /* FirstTabView.swift in Sources */,
 				6F9A47182C33B8A5009983A3 /* DeeplinkCoordinator.swift in Sources */,
+				6F68C56A2C4A5AF400219D8D /* LoaderAssembly.swift in Sources */,
 				6F68C5022C3BAE3F00219D8D /* Binding+AnyHashable.swift in Sources */,
 				6F9A470D2C315C73009983A3 /* FirstTabCoordinator.swift in Sources */,
 				6F9A46E42C2D2F71009983A3 /* TabBarView.swift in Sources */,
@@ -613,6 +679,7 @@
 				6F68C5152C3C6BF800219D8D /* SecondFlowCoordinator+ViewDoubleOutput.swift in Sources */,
 				6F68C53F2C49700E00219D8D /* SecondSheetAssembly.swift in Sources */,
 				6F68C51C2C3C72DC00219D8D /* SecondFlowSheetCoordinatorAssembly.swift in Sources */,
+				6F68C5682C4A5AEA00219D8D /* LoaderModel.swift in Sources */,
 				6F9A47002C2F0117009983A3 /* FirstFlowCoordinator+ViewDoubleOutput.swift in Sources */,
 				6F9A47082C2F031B009983A3 /* FirstFlowCoordinatorAssembly.swift in Sources */,
 				6F68C53B2C496FED00219D8D /* SecondSheetInteractor.swift in Sources */,
@@ -626,6 +693,7 @@
 				6F9A46D82C2D2F3D009983A3 /* ViewStringModel.swift in Sources */,
 				6F68C5282C49562F00219D8D /* SecondSheet.swift in Sources */,
 				6F9A46F52C2DD6F1009983A3 /* FirstTabViewAssembly.swift in Sources */,
+				6F68C5642C4A5ACC00219D8D /* LoaderPresenter.swift in Sources */,
 				6F68C5092C3BB09F00219D8D /* FirstFlowSheetCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
