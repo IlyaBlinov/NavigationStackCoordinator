@@ -42,9 +42,9 @@ final class PathManager: ObservableObject {
 //	
 //	@Published var sheetCoordinator: SheetCoordinator?
 	
-	@Published var sheet: AnyHashable?
-	
-	@Published var fullScreenCover: AnyHashable?
+//	@Published var sheet: AnyHashable?
+//	
+//	@Published var fullScreenCover: AnyHashable?
 	
 	private var savedPath: NavigationPath = NavigationPath()
 	

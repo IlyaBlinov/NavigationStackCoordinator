@@ -7,35 +7,33 @@
 
 import SwiftUI
 
-protocol IFirstTabCoordinator {}
+protocol IFirstTabCoordinator: AnyObject {
+	func showViewInt()
+}
 
 final class FirstTabCoordinator: IFirstTabCoordinator {
 	
-	private let pathManager: PathManager
+	private let navigationManager: NavigationManager
 	private let assembly: IFirstTabCoordinatorAssembly
 	
 	
 	init(
-		pathManager: PathManager,
+		navigationManager: NavigationManager,
 		assembly: IFirstTabCoordinatorAssembly
 	) {
-		self.pathManager = pathManager
+		self.navigationManager = navigationManager
 		self.assembly = assembly
 		
 	}
 	
 	@ViewBuilder
-	private func rootView() -> some View {
+	func view() -> some View {
 		assembly.assemblyFirstTabView(model: .init(value: "I'm FirstTab"))
 	}
 	
-	@ViewBuilder
-	func view() -> some View {
-		FirstTabCoordinatorView(
-			coordinator: self,
-			pathManager: pathManager,
-			rootView: self.rootView()
-		)
+	func showViewInt() {
+		let firstFlowCoordinator = assembly.assemblyFirstFlowCoordinator()
+		self.navigationManager.push(firstFlowCoordinator)
 	}
 	
 	

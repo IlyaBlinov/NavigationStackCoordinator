@@ -36,23 +36,23 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 		case viewInt, viewString, viewDouble
 	}
 	
-	private let pathManager: PathManager
+	private let navigationManager: NavigationManager
 	private let assembly: IFirstFlowCoordinatorAssembly
 	
 	private let id: UUID
 	private var page: Page
-	private var tabBarManager: TabBarManager
+	private let tabBarManager: TabBarManager
 
 	
 	init(
 		page: Page,
-		pathManager: PathManager,
+		navigationManager: NavigationManager,
 		assembly: IFirstFlowCoordinatorAssembly,
 		tabBarManager: TabBarManager
 	) {
-		id = UUID()
+		self.id = UUID()
 		self.page = page
-		self.pathManager = pathManager
+		self.navigationManager = navigationManager
 		self.assembly = assembly
 		self.tabBarManager = tabBarManager
 	}
@@ -60,7 +60,7 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	//MARK: Tab Bar
 	
 	func selectNewTab(index: Int) {
-		self.tabBarManager.selectedTabIndex = index
+		self.tabBarManager.setSelectedIndex(index)
 	}
 	
 	//MARK:  Show Views
@@ -69,63 +69,60 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			assembly.assemblyViewInt(.init(value: 100, output: ViewIntOutput(coordinator: self)))
+			assembly.assemblyViewInt(.init(value: 100))
 		case .viewDouble:
-			assembly.assemblyViewDouble(.init(value: 999.0, output: ViewDoubleOutput(coordinator: self)))
+			assembly.assemblyViewDouble(.init(value: 999.0))
 		case .viewString:
-			assembly.assemblyString(.init(value: "FirstFlow", output: ViewStringOutput(coordinator: self)))
-				.navigationDestination(for: ThirdFlowCoordinator.self) { [pathManager] coordinator in
-					coordinator.view(pathManager: pathManager)
-				}
+			assembly.assemblyString(.init(value: "FirstFlow"))
 		}
 			
 	}
 
 	func showViewString() {
 		self.page = .viewString
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	func showViewInt() {
 		self.page = .viewInt
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	func showViewDouble() {
 		self.page = .viewDouble
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	func showSecondFlowCoordinatorView() {
-		let secondCoordinator = assembly.assemblySecondFlowCoordinator(pathManager: pathManager, tabBarManager: tabBarManager)
-		self.pathManager.push(secondCoordinator)
+		let secondCoordinator = assembly.assemblySecondFlowCoordinator(navigationManager: navigationManager, tabBarManager: tabBarManager)
+		self.navigationManager.push(secondCoordinator)
 	}
 	
 	// MARK: Sheets
 	
 	func showFirstSheet() {
-		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .firstSheet)
-		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+		let coordinator = assembly.assemblySheetCoordinator(sheet: .firstSheet)
+		self.navigationManager.showSheet(AnyHashable(coordinator))
 	}
 	
 	func showSecondSheet() {
 		let coordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
-		self.pathManager.sheet = AnyHashable(coordinator)
+		self.navigationManager.showSheet(AnyHashable(coordinator))
 	}
 	
 	func dismissSheet() {
-		self.pathManager.sheet = nil
+		self.navigationManager.hideSheet()
 	}
 	
 	// MARK: FullScreenCover
 	
 	func showLoader() {
 		let coordinator = assembly.assemblyFullScreenCoverCoordinator(fullScreenCover: .loader)
-		self.pathManager.fullScreenCover = AnyHashable(coordinator)
+		self.navigationManager.showFullScreenCover(AnyHashable(coordinator))
 	}
 	
 	func dismissFullScreenCover() {
-		self.pathManager.fullScreenCover = nil
+		self.navigationManager.hideFullScreenCover()
 	}
 	
 	// MARK: Hashable

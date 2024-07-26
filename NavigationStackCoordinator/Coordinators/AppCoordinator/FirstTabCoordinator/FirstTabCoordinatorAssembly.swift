@@ -17,11 +17,16 @@ protocol IFirstTabCoordinatorAssembly: AnyObject {
 
 final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 	
-	private let pathManager: PathManager
+	private let navigationManager: NavigationManager
 	private let tabBarManager: TabBarManager
 	
-	init(pathManager: PathManager, tabBarManager: TabBarManager) {
-		self.pathManager = pathManager
+	weak var coordinator: IFirstTabCoordinator!
+	
+	init(
+		navigationManager: NavigationManager,
+		tabBarManager: TabBarManager
+	) {
+		self.navigationManager = navigationManager
 		self.tabBarManager = tabBarManager
 	}
 	
@@ -38,7 +43,7 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 		let coordinator =
 		FirstFlowCoordinator(
 			page: .viewInt,
-			pathManager: pathManager,
+			navigationManager: navigationManager,
 			assembly: assembly,
 			tabBarManager: tabBarManager
 		)
@@ -48,8 +53,8 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 	
 	func assemblyFirstTabView(model: FirstTabViewModel.SceneInput) -> FirstTabView {
 		var view = FirstTabView()
-		let coordinator = assemblyFirstFlowCoordinator()
-		let output = FirstFlowCoordinator.FirstTabOutput(coordinator: coordinator)
+		//let coordinator = assemblyFirstFlowCoordinator()
+		let output = FirstTabCoordinator.FirstTabOutput(coordinator: self.coordinator)
 		view.interactor = FirstTabViewInteractor(output: output)
 		view.store.value = model.value
 		return view

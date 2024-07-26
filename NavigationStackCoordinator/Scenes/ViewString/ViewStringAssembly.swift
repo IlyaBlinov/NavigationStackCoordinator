@@ -9,23 +9,14 @@ import Foundation
 import SwiftUI
 
 protocol IViewStringAssembly: AnyObject {
-	func assembly(model: ViewStringModel.SceneInput) -> ViewString
+	func assembly(model: ViewStringModel.SceneInput, output: IViewStringOutput) -> ViewString
 }
 
 
 final class ViewStringAssembly: IViewStringAssembly {
-	func assembly(model: ViewStringModel.SceneInput) -> ViewString {
+	func assembly(model: ViewStringModel.SceneInput, output: IViewStringOutput) -> ViewString {
 		var view = ViewString()
-		view.interactor = ViewStringInteractor(output: model.output)
-		view.store.value = model.value
-		return view
-	}
-}
-
-extension ViewString {
-	func configure(_ model: ViewStringModel.SceneInput) -> some View {
-		var view = self
-		view.interactor = ViewStringInteractor(output: model.output)
+		view.interactor = ViewStringInteractor(output: output)
 		view.store.value = model.value
 		return view
 	}

@@ -20,12 +20,10 @@ enum ViewIntModel {
 		}
 		let id: UUID
 		let value: Int
-		let output: IViewIntOutput
 	
 		
-		init(value: Int, output: IViewIntOutput) {
+		init(value: Int) {
 			self.value = value
-			self.output = output
 			self.id = UUID()
 		}
 	}

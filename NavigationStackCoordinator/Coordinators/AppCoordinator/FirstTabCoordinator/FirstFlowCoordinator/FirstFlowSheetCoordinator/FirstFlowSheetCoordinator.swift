@@ -38,7 +38,7 @@ final class FirstFlowSheetCoordinator: Hashable, Identifiable, IFirstFlowSheetCo
 	func view() -> some View {
 		switch self.sheet {
 		case .firstSheet:
-			assembly.assemblyFirstSheet(FirstSheetModel.SceneInput(value: 15))
+			assembly.assemblyFirstSheet(FirstSheetModel.SceneInput(value: 15)).presentationDetents([.medium])
 		case .secondSheet:
 			assembly.assemblySecondSheet(SecondSheetModel.SceneInput(value: 15))
 		}

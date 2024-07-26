@@ -32,7 +32,7 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 		case viewInt, viewString, viewDouble
 	}
 	
-	private let pathManager: PathManager
+	private let navigationManager: NavigationManager
 	private let assembly: ISecondFlowCoordinatorAssembly
 	
 	private let id: UUID
@@ -42,13 +42,13 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 	
 	init(
 		page: Page,
-		pathManager: PathManager,
+		navigationManager: NavigationManager,
 		assembly: ISecondFlowCoordinatorAssembly,
 		tabBarManager: TabBarManager
 	) {
 		id = UUID()
 		self.page = page
-		self.pathManager = pathManager
+		self.navigationManager = navigationManager
 		self.assembly = assembly
 		self.tabBarManager = tabBarManager
 	}
@@ -57,35 +57,35 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			ViewInt().configure(.init(value: 100, output: ViewIntOutput(coordinator: self)))
+			assembly.assemblyViewInt(.init(value: 122))
 		case .viewDouble:
-			ViewDouble().configure(.init(value: 999.0, output: ViewDoubleOutput(coordinator: self)))
+			assembly.assemblyViewDouble(.init(value: 43.98))
 		case .viewString:
-			ViewString().configure(.init(value: "Second Flow", output: ViewStringOutput(coordinator: self)))
+			assembly.assemblyString(.init(value: "Second Flow"))
 		}
 	}
 	
 	//MARK: Tab Bar
 	
 	func selectNewTab(index: Int) {
-		self.tabBarManager.selectedTabIndex = index
+		self.tabBarManager.setSelectedIndex(index)
 	}
 	
 	//MARK:  Show Views
 	
 	func showViewString() {
 		self.page = .viewString
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	func showViewInt() {
 		self.page = .viewInt
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	func showViewDouble() {
 		self.page = .viewDouble
-		self.pathManager.push(self)
+		self.navigationManager.push(self)
 	}
 	
 	
@@ -93,16 +93,16 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 	
 	func showFirstSheet() {
 		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .firstSheet)
-		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+		self.navigationManager.showSheet(AnyHashable(sheetCoordinator))
 	}
 	
 	func showSecondSheet() {
 		let sheetCoordinator = assembly.assemblySheetCoordinator(sheet: .secondSheet)
-		self.pathManager.sheet = AnyHashable(sheetCoordinator)
+		self.navigationManager.showSheet(AnyHashable(sheetCoordinator))
 	}
 	
 	func dismissSheet() {
-		self.pathManager.sheet = nil
+		self.navigationManager.hideSheet()
 	}
 	
 	// MARK: Hashable
@@ -118,7 +118,4 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 		lhs.id == rhs.id
 	}
 	
-	func push<V>(_ value: V) where V : Hashable {
-		pathManager.push(value)
-	}
 }

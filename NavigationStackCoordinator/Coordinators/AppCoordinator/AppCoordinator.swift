@@ -7,33 +7,29 @@
 
 import SwiftUI
 
-final class AppCoordinator: ObservableObject {
+final class AppCoordinator: Hashable {
 	
-	private let mainContainer: MainContainer
+	private let assembly: IAppCoordinatorAssembly
+	private let id: UUID
+	var deeplinkCoordinator = DeeplinkCoordinator()
 	
-	init(mainContainer: MainContainer) {
-		self.mainContainer = mainContainer
+	init(assembly: IAppCoordinatorAssembly) {
+		self.assembly = assembly
+		self.id = UUID()
 	}
 	
 	
 	@ViewBuilder
 	func view() -> some View {
-		MainView(
-			tabBarManager: mainContainer.tabBarManager,
-			firstTabView: self.makeFirstTabCoordinatorView(),
-			secondTabView: Color.green,
-			thirdTabView: Color.blue
-		)
+		assembly.assemblyMainView()
 	}
 	
-	@ViewBuilder
-	func makeFirstTabCoordinatorView() -> some View {
-		let coordinator = FirstTabCoordinator(
-			pathManager: mainContainer.firstTabPathManager,
-			assembly: mainContainer.makeFirstTabCoordinatorAssembly()
-		)
-		coordinator.view()
+	static func == (lhs: AppCoordinator, rhs: AppCoordinator) -> Bool {
+		lhs.id == rhs.id
 	}
 	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
 }
 

@@ -20,12 +20,10 @@ enum ViewStringModel {
 		
 		let id: UUID
 		let value: String
-		let output: IViewStringOutput
 		
 		
-		init(value: String, output: IViewStringOutput) {
+		init(value: String) {
 			self.value = value
-			self.output = output
 			self.id = UUID()
 		}
 	}

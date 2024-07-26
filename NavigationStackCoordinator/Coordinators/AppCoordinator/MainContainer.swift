@@ -9,37 +9,13 @@ import SwiftUI
 
 final class MainContainer {
 	
-	var tabBarManager = TabBarManager()
+	var tabBarNavigaton = TabBarNavigaton()
 	
-	var firstTabPathManager = PathManager()
+	var firstTabNavigation = Navigation()
 	
-	var secondTabPathManager = PathManager()
+	var secondTabNavigation = Navigation()
 	
-	var thirdTabPathManager = PathManager()
-	
-	
-
-	
-	func makeDeeplinkCoordinator() -> DeeplinkCoordinator {
-		let deeplinkCoordinator = DeeplinkCoordinator()
-		let firstFlowCoordinator = self.makeFirstTabCoordinatorAssembly().assemblyFirstFlowCoordinator()
-		
-		let firstFlowDeeplinkHandlersFactory = FirstFlowDeeplinkHandlersFactory(mainContainer: self)
-		let firstTabDeeplinkHandlersFactory = FirstTabDeeplinkHandlersFactory(firstFlowDeeplinkHandlersFactory: firstFlowDeeplinkHandlersFactory)
-		
-		let firstTabDeeplinksHandlers = firstTabDeeplinkHandlersFactory.produce()
-		
-		deeplinkCoordinator.handlers.append(contentsOf: firstTabDeeplinksHandlers)
-		
-		return deeplinkCoordinator
-		
-	}
-	
-	// MARK: TabCoordinatorAssembly
-	func makeFirstTabCoordinatorAssembly() -> FirstTabCoordinatorAssembly {
-		FirstTabCoordinatorAssembly(pathManager: firstTabPathManager, tabBarManager: tabBarManager)
-	}
-	
+	var thirdTabNavigation = Navigation()
 
 }
 

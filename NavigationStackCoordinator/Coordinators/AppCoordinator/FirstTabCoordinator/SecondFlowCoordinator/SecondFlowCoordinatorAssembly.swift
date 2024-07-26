@@ -20,15 +20,15 @@ final class SecondFlowCoordinatorAssembly: ISecondFlowCoordinatorAssembly {
 	weak var coordinator: ISecondFlowCoordinator!
 	
 	func assemblyViewInt(_ model: ViewIntModel.SceneInput) -> ViewInt{
-		ViewIntAssembly().assembly(model: model)
+		ViewIntAssembly().assembly(model: model, output: SecondFlowCoordinator.ViewIntOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput) -> ViewDouble  {
-		ViewDoubleAssembly().assembly(model: model)
+		ViewDoubleAssembly().assembly(model: model, output: SecondFlowCoordinator.ViewDoubleOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString  {
-		ViewStringAssembly().assembly(model: model)
+		ViewStringAssembly().assembly(model: model, output: SecondFlowCoordinator.ViewStringOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblySheetCoordinator(sheet: SecondFlowSheetCoordinator.Sheet) -> SecondFlowSheetCoordinator {

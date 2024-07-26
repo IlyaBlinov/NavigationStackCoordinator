@@ -8,29 +8,19 @@
 import SwiftUI
 
 protocol IViewIntAssembly: AnyObject {
-	func assembly(model: ViewIntModel.SceneInput) -> ViewInt
+	func assembly(model: ViewIntModel.SceneInput, output: IViewIntOutput) -> ViewInt
 }
 
 
 final class ViewIntAssembly: IViewIntAssembly {
 	
-	func assembly(model: ViewIntModel.SceneInput) -> ViewInt {
+	func assembly(model: ViewIntModel.SceneInput, output: IViewIntOutput) -> ViewInt {
 		var view = ViewInt()
 		let presenter = ViewIntPresenter()
 		presenter.view = view
-		view.interactor = ViewIntInteractor(output: model.output, presenter: presenter)
+		view.interactor = ViewIntInteractor(output: output, presenter: presenter)
 		view.store.value = model.value
 		return view
 	}
 }
 
-extension ViewInt {
-	func configure(_ model: ViewIntModel.SceneInput) -> some View {
-		var view = self
-		let presenter = ViewIntPresenter()
-		presenter.view = view
-		view.interactor = ViewIntInteractor(output: model.output, presenter: presenter)
-		view.store.value = model.value
-		return view
-	}
-}

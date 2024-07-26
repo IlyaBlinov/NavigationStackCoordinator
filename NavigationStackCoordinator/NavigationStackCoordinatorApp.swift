@@ -10,13 +10,15 @@ import SwiftUI
 @main
 struct NavigationStackCoordinatorApp: App {
 	
-	@StateObject private var appCoordinator: AppCoordinator
+	var appCoordinator: AppCoordinator
 	private var deeplinkCoordinator: DeeplinkCoordinator
 	
 	init() {
 		let mainContainer = MainContainer()
-		self._appCoordinator = StateObject(wrappedValue: AppCoordinator(mainContainer: mainContainer))
-		self.deeplinkCoordinator = mainContainer.makeDeeplinkCoordinator()
+		let assembly = AppCoordinatorAssembly(mainContainer: mainContainer)
+		self.appCoordinator = AppCoordinator(assembly: assembly)
+		assembly.coordinator = self.appCoordinator
+		self.deeplinkCoordinator = assembly.assemblyDeeplinkCoordinator()
 		
 	}
 	

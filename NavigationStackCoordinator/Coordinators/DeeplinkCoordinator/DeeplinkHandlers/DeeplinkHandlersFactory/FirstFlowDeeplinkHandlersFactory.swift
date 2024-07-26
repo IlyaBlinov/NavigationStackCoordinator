@@ -9,24 +9,22 @@ import Foundation
 
 final class FirstFlowDeeplinkHandlersFactory {
 	
-	private let mainContainer: MainContainer
+	private let coordinator: IFirstFlowCoordinator
 	
-	init(mainContainer: MainContainer) {
-		self.mainContainer = mainContainer
+	init(coordinator: IFirstFlowCoordinator) {
+		self.coordinator = coordinator
 	}
 	
 	func produce(page: FirstFlowCoordinator.Page) -> IDeeplinkHandler {
-		let firstFlowCoordinator = self.mainContainer.makeFirstTabCoordinatorAssembly().assemblyFirstFlowCoordinator()
-		
 		switch page {
 		case .viewInt:
-			let viewStringHandler = ViewIntHandler(coordinator: firstFlowCoordinator)
+			let viewStringHandler = ViewIntHandler(coordinator: coordinator)
 			return viewStringHandler
 		case .viewString:
-			let viewStringHandler = ViewStringHandler(coordinator: firstFlowCoordinator)
+			let viewStringHandler = ViewStringHandler(coordinator: coordinator)
 			return viewStringHandler
 		case .viewDouble:
-			let viewStringHandler = ViewDoubleHandler(coordinator: firstFlowCoordinator)
+			let viewStringHandler = ViewDoubleHandler(coordinator: coordinator)
 			return viewStringHandler
 		}
 	}

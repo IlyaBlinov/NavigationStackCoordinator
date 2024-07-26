@@ -7,6 +7,20 @@
 
 import SwiftUI
 
-final class TabBarManager: ObservableObject {
+final class TabBarNavigaton: ObservableObject {
 	@Published var selectedTabIndex: Int = 0
+}
+
+
+final class TabBarManager {
+	
+	private let tabBarNavigaton: TabBarNavigaton
+	
+	init(tabBarNavigaton: TabBarNavigaton) {
+		self.tabBarNavigaton = tabBarNavigaton
+	}
+	
+	func setSelectedIndex(_ index: Int) {
+		self.tabBarNavigaton.selectedTabIndex = index
+	}
 }

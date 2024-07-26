@@ -7,17 +7,17 @@
 
 import Foundation
 
-extension FirstFlowCoordinator {
-	final class FirstTabOutput: IFirstTabViewOutput {
-		let coordinator: IFirstFlowCoordinator
-		
-		
-		init(coordinator: IFirstFlowCoordinator) {
-			self.coordinator = coordinator
-		}
-		
-		func pushNextScreen() {
-			coordinator.showViewInt()
-		}
-	}
-}
+//extension FirstFlowCoordinator {
+//	final class FirstTabOutput: IFirstTabViewOutput {
+//		let coordinator: IFirstFlowCoordinator
+//		
+//		
+//		init(coordinator: IFirstFlowCoordinator) {
+//			self.coordinator = coordinator
+//		}
+//		
+//		func pushNextScreen() {
+//			coordinator.showViewInt()
+//		}
+//	}
+//}

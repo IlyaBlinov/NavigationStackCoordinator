@@ -8,23 +8,14 @@
 import SwiftUI
 
 protocol IViewDoubleAssembly: AnyObject {
-	func assembly(model: ViewDoubleModel.SceneInput) -> ViewDouble
+	func assembly(model: ViewDoubleModel.SceneInput, output: IViewDoubleOutput) -> ViewDouble
 }
 
 
 final class ViewDoubleAssembly: IViewDoubleAssembly {
-	func assembly(model: ViewDoubleModel.SceneInput) -> ViewDouble {
+	func assembly(model: ViewDoubleModel.SceneInput, output: IViewDoubleOutput) -> ViewDouble {
 		var view = ViewDouble()
-		view.interactor = ViewDoubleInteractor(output: model.output)
-		view.store.value = model.value
-		return view
-	}
-}
-
-extension ViewDouble {
-	func configure(_ model: ViewDoubleModel.SceneInput) -> some View {
-		var view = self
-		view.interactor = ViewDoubleInteractor(output: model.output)
+		view.interactor = ViewDoubleInteractor(output: output)
 		view.store.value = model.value
 		return view
 	}

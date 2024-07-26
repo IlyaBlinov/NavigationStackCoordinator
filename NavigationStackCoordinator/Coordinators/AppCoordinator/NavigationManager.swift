@@ -1,0 +1,82 @@
+//
+//  NavigationManager.swift
+//  NavigationStackCoordinator
+//
+//  Created by Илья Блинов on 21.07.2024.
+//
+
+import SwiftUI
+
+final class Navigation: ObservableObject {
+	@Published var path: NavigationPath = NavigationPath()
+	@Published var sheet: AnyHashable?
+	@Published var fullScreenCover: AnyHashable?
+}
+
+final class NavigationManager {
+	
+	private let navigation: Navigation
+	
+	init(navigation: Navigation) {
+		self.navigation = navigation
+	}
+	
+	
+	func push<T: Hashable>(_ value: T) {
+		self.navigation.path.append(value)
+	}
+	
+	func showSheet(_ sheet: AnyHashable) {
+		self.navigation.sheet = sheet
+	}
+	
+	func hideSheet() {
+		self.navigation.sheet = nil
+	}
+	
+	func showFullScreenCover(_ fullScreenCover: AnyHashable) {
+		self.navigation.fullScreenCover = fullScreenCover
+	}
+	
+	func hideFullScreenCover() {
+		self.navigation.fullScreenCover = nil
+	}
+	
+	
+	
+	
+}
+
+
+
+//final class NavigationManager: ObservableObject {
+//	
+//	@Published var path: NavigationPath = NavigationPath()
+//	@Published var sheet: AnyHashable?
+//	@Published var fullScreenCover: AnyHashable?
+//	
+//	
+//	func push<T: Hashable>(_ value: T) {
+//		path.append(value)
+//	}
+//	
+//	func showSheet(_ sheet: AnyHashable) {
+//		self.sheet = sheet
+//	}
+//	
+//	func hideSheet() {
+//		self.sheet = nil
+//	}
+//	
+//	func showFullScreenCover(_ fullScreenCover: AnyHashable) {
+//		self.fullScreenCover = fullScreenCover
+//	}
+//	
+//	func hideFullScreenCover() {
+//		self.fullScreenCover = nil
+//	}
+//	
+//	
+//
+//	
+//}

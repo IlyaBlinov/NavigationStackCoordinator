@@ -9,10 +9,10 @@ import Foundation
 
 final class ViewStringHandler: IDeeplinkHandler {
 	
-	private var coordinator: FirstFlowCoordinator
+	private var coordinator: IFirstFlowCoordinator
 	
 	
-	init(coordinator: FirstFlowCoordinator) {
+	init(coordinator: IFirstFlowCoordinator) {
 		self.coordinator = coordinator
 	}
 	

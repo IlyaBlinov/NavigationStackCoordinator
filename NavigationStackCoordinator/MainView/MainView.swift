@@ -37,19 +37,19 @@ class TabBarSettings: ObservableObject {
 
 struct MainView<FirstTabView: View, SecondTabView: View,  ThirdTabView: View>: View {
 	
-	@StateObject private var tabBarManager: TabBarManager
+	@StateObject private var tabBarNavigation: TabBarNavigaton
 	
 	private let firstTabView: FirstTabView
 	private let secondTabView: SecondTabView
 	private let thirdTabView: ThirdTabView
 	
 	init(
-		tabBarManager: TabBarManager,
+		tabBarNavigation: TabBarNavigaton,
 		firstTabView: FirstTabView,
 		secondTabView: SecondTabView,
 		thirdTabView: ThirdTabView
 	) {
-		self._tabBarManager = StateObject(wrappedValue: tabBarManager)
+		self._tabBarNavigation = StateObject(wrappedValue: tabBarNavigation)
 		self.firstTabView = firstTabView
 		self.secondTabView = secondTabView
 		self.thirdTabView = thirdTabView
@@ -57,26 +57,26 @@ struct MainView<FirstTabView: View, SecondTabView: View,  ThirdTabView: View>: V
 	
 	var body: some View {
 		let _ = Self._printChanges()
-		TabBarView(selection: $tabBarManager.selectedTabIndex) {
+		TabBarView(selection: $tabBarNavigation.selectedTabIndex) {
 			firstTabView
 				.customTabItem {
 					Text("FirstTabFlow")
 						.foregroundColor(.white)
 				}
-				.opacity(tabBarManager.selectedTabIndex == 0 ? 1 : 0)
+				.opacity(tabBarNavigation.selectedTabIndex == 0 ? 1 : 0)
 			secondTabView
 				.customTabItem {
 					Text("SecondTabFlow")
 						.foregroundColor(.white)
 				}
-				.opacity(tabBarManager.selectedTabIndex == 1 ? 1 : 0)
+				.opacity(tabBarNavigation.selectedTabIndex == 1 ? 1 : 0)
 			
 			thirdTabView
 				.customTabItem {
 					Text("ThirdTabFlow")
 						.foregroundColor(.white)
 				}
-				.opacity(tabBarManager.selectedTabIndex == 2 ? 1 : 0)
+				.opacity(tabBarNavigation.selectedTabIndex == 2 ? 1 : 0)
 			
 			
 		}

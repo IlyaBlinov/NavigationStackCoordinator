@@ -9,31 +9,28 @@ import Foundation
 import SwiftUI
 
 
-struct FirstTabCoordinatorView<R: View>: View {
+struct FirstTabNavigationView<R: View>: View {
 	
-	@StateObject private var  pathManager: PathManager
+	@StateObject private var navigation: Navigation
 	
 	@State private var sheet: AnyHashable?
 	@State private var fullScreenCover: AnyHashable?
 	
-	private let coordinator: FirstTabCoordinator
 	
 	private let rootView: R
 	
 	init(
-		coordinator: FirstTabCoordinator,
-		pathManager: PathManager,
+		navigation: Navigation,
 		rootView: R
 	) {
-		self.coordinator = coordinator
-		self._pathManager = StateObject(wrappedValue: pathManager)
+		self._navigation = StateObject(wrappedValue: navigation)
 		self.rootView = rootView
 		
 	}
 	
 	var body: some View {
 		let _ = Self._printChanges()
-		NavigationStack(path: $pathManager.path) {
+		NavigationStack(path: $navigation.path) {
 			rootView
 				.navigationDestination(for: FirstFlowCoordinator.self) { coordinator in
 					coordinator.view()
@@ -60,10 +57,10 @@ struct FirstTabCoordinatorView<R: View>: View {
 			content: { coordinator in
 				coordinator.view()
 			})
-		.onReceive(pathManager.$sheet, perform: { sheet in
+		.onReceive(navigation.$sheet, perform: { sheet in
 			self.sheet = sheet
 		})
-		.onReceive(pathManager.$fullScreenCover, perform: { fullScreenCover in
+		.onReceive(navigation.$fullScreenCover, perform: { fullScreenCover in
 			self.fullScreenCover = fullScreenCover
 		})
 	}
