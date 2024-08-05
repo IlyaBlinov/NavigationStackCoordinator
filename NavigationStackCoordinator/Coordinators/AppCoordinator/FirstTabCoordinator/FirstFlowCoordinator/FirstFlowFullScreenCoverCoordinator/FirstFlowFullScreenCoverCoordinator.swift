@@ -20,7 +20,7 @@ final class FirstFlowFullScreenCoverCoordinator: Hashable, Identifiable, IFirstF
 	}
 	
 	private let assembly: IFirstFlowFullScreenCoverAssembly
-	private var fullScreenCover: FullScreenCover
+	var fullScreenCover: FullScreenCover
 	
 	let id: UUID
 	

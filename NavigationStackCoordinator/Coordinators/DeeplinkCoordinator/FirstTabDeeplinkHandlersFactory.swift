@@ -16,10 +16,10 @@ final class FirstTabDeeplinkHandlersFactory {
 	}
 	
 	func produce() -> [IDeeplinkHandler] {
-		FirstFlowCoordinator.Page.allCases.map { page in
-			firstFlowDeeplinkHandlersFactory.produce(page: page)
-		}
-		
+		var handlers: [IDeeplinkHandler] = []
+		let firstFlowHandlers = firstFlowDeeplinkHandlersFactory.produce()
+		handlers.append(contentsOf: firstFlowHandlers)
+		return handlers
 	}
 	
 }

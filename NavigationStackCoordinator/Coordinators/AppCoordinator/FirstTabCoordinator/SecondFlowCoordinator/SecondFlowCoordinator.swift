@@ -32,19 +32,18 @@ final class SecondFlowCoordinator: Hashable, ISecondFlowCoordinator {
 		case viewInt, viewString, viewDouble
 	}
 	
-	private let navigationManager: NavigationManager
+	private let navigationManager: INavigationManager
 	private let assembly: ISecondFlowCoordinatorAssembly
-	
 	private let id: UUID
-	private var page: Page
-	private var tabBarManager: TabBarManager
+	private var tabBarManager: ITabBarManager
 	
+	var page: Page
 	
 	init(
 		page: Page,
-		navigationManager: NavigationManager,
+		navigationManager: INavigationManager,
 		assembly: ISecondFlowCoordinatorAssembly,
-		tabBarManager: TabBarManager
+		tabBarManager: ITabBarManager
 	) {
 		id = UUID()
 		self.page = page

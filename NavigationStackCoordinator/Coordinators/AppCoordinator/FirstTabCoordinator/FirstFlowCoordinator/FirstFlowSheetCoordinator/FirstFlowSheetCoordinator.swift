@@ -21,7 +21,7 @@ final class FirstFlowSheetCoordinator: Hashable, Identifiable, IFirstFlowSheetCo
 	}
 	
 	private let assembly: IFirstFlowSheetCoordinatorAssembly
-	private var sheet: Sheet
+	var sheet: Sheet
 	
 	let id: UUID
 	

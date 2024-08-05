@@ -17,14 +17,14 @@ protocol IFirstTabCoordinatorAssembly: AnyObject {
 
 final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 	
-	private let navigationManager: NavigationManager
-	private let tabBarManager: TabBarManager
+	private let navigationManager: INavigationManager
+	private let tabBarManager: ITabBarManager
 	
 	weak var coordinator: IFirstTabCoordinator!
 	
 	init(
-		navigationManager: NavigationManager,
-		tabBarManager: TabBarManager
+		navigationManager: INavigationManager,
+		tabBarManager: ITabBarManager
 	) {
 		self.navigationManager = navigationManager
 		self.tabBarManager = tabBarManager
@@ -53,7 +53,6 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 	
 	func assemblyFirstTabView(model: FirstTabViewModel.SceneInput) -> FirstTabView {
 		var view = FirstTabView()
-		//let coordinator = assemblyFirstFlowCoordinator()
 		let output = FirstTabCoordinator.FirstTabOutput(coordinator: self.coordinator)
 		view.interactor = FirstTabViewInteractor(output: output)
 		view.store.value = model.value

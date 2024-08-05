@@ -13,12 +13,12 @@ protocol IFirstTabCoordinator: AnyObject {
 
 final class FirstTabCoordinator: IFirstTabCoordinator {
 	
-	private let navigationManager: NavigationManager
+	private let navigationManager: INavigationManager
 	private let assembly: IFirstTabCoordinatorAssembly
 	
 	
 	init(
-		navigationManager: NavigationManager,
+		navigationManager: INavigationManager,
 		assembly: IFirstTabCoordinatorAssembly
 	) {
 		self.navigationManager = navigationManager

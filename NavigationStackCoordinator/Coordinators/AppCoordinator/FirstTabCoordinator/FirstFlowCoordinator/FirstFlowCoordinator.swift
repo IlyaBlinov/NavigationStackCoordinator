@@ -26,29 +26,28 @@ protocol IFirstFlowCoordinator: AnyObject {
 	
 	func showLoader()
 	
-	func dismissFullScreenCover()
+	func hideLoader()
 	
 }
 
 final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	
-	enum Page: CaseIterable {
+	enum Page {
 		case viewInt, viewString, viewDouble
 	}
 	
-	private let navigationManager: NavigationManager
+	private let navigationManager: INavigationManager
 	private let assembly: IFirstFlowCoordinatorAssembly
-	
 	private let id: UUID
-	private var page: Page
-	private let tabBarManager: TabBarManager
-
+	private let tabBarManager: ITabBarManager
+	
+	var page: Page
 	
 	init(
 		page: Page,
-		navigationManager: NavigationManager,
+		navigationManager: INavigationManager,
 		assembly: IFirstFlowCoordinatorAssembly,
-		tabBarManager: TabBarManager
+		tabBarManager: ITabBarManager
 	) {
 		self.id = UUID()
 		self.page = page
@@ -121,7 +120,7 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 		self.navigationManager.showFullScreenCover(AnyHashable(coordinator))
 	}
 	
-	func dismissFullScreenCover() {
+	func hideLoader() {
 		self.navigationManager.hideFullScreenCover()
 	}
 	

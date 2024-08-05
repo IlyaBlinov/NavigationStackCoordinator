@@ -12,7 +12,12 @@ final class TabBarNavigaton: ObservableObject {
 }
 
 
-final class TabBarManager {
+
+protocol ITabBarManager: AnyObject {
+	func setSelectedIndex(_ index: Int)
+}
+
+final class TabBarManager: ITabBarManager {
 	
 	private let tabBarNavigaton: TabBarNavigaton
 	

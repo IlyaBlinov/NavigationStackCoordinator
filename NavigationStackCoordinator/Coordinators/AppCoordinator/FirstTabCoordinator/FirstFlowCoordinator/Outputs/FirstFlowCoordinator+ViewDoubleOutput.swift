@@ -26,7 +26,7 @@ extension FirstFlowCoordinator {
 		}
 		
 		func hideLoader() {
-			coordinator.dismissFullScreenCover()
+			coordinator.hideLoader()
 		}
 		
 		

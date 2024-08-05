@@ -13,7 +13,15 @@ final class Navigation: ObservableObject {
 	@Published var fullScreenCover: AnyHashable?
 }
 
-final class NavigationManager {
+protocol INavigationManager: AnyObject {
+	func push<T: Hashable>(_ value: T)
+	func showSheet(_ sheet: AnyHashable)
+	func hideSheet()
+	func showFullScreenCover(_ fullScreenCover: AnyHashable)
+	func hideFullScreenCover()
+}
+
+final class NavigationManager: INavigationManager  {
 	
 	private let navigation: Navigation
 	

@@ -15,17 +15,15 @@ final class FirstFlowDeeplinkHandlersFactory {
 		self.coordinator = coordinator
 	}
 	
-	func produce(page: FirstFlowCoordinator.Page) -> IDeeplinkHandler {
-		switch page {
-		case .viewInt:
-			let viewStringHandler = ViewIntHandler(coordinator: coordinator)
-			return viewStringHandler
-		case .viewString:
-			let viewStringHandler = ViewStringHandler(coordinator: coordinator)
-			return viewStringHandler
-		case .viewDouble:
-			let viewStringHandler = ViewDoubleHandler(coordinator: coordinator)
-			return viewStringHandler
-		}
+	func produce() -> [IDeeplinkHandler] {
+		var handlers: [IDeeplinkHandler] = []
+		let viewIntHandler = ViewIntHandler(coordinator: coordinator)
+		let viewStringHandler = ViewStringHandler(coordinator: coordinator)
+		let viewDoubleHandler = ViewDoubleHandler(coordinator: coordinator)
+		handlers.append(viewIntHandler)
+		handlers.append(viewStringHandler)
+		handlers.append(viewDoubleHandler)
+		return handlers
+
 	}
 }
