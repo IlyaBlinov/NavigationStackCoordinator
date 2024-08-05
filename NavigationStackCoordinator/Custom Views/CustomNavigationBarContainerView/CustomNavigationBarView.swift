@@ -21,7 +21,7 @@ struct CustomNavigationBarView: View {
 	
 	
 	var body: some View {
-		let _ = Self._printChanges()
+		//let _ = Self._printChanges()
 		HStack {
 			if !backButtonHidden {
 				backButton

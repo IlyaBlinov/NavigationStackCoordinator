@@ -56,7 +56,7 @@ struct MainView<FirstTabView: View, SecondTabView: View,  ThirdTabView: View>: V
 	}
 	
 	var body: some View {
-		let _ = Self._printChanges()
+		//let _ = Self._printChanges()
 		TabBarView(selection: $tabBarNavigation.selectedTabIndex) {
 			firstTabView
 				.customTabItem {

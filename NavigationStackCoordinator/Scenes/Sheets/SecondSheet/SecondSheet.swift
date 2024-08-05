@@ -19,7 +19,7 @@ struct SecondSheet: View {
 	
 	@ObservedObject var store: SecondSheetModel.Store = SecondSheetModel.Store()
 	
-	@Environment(\.dismiss) private var dismiss
+	@Environment(\.presentationMode) private var presentationMode
 	
 	var body: some View {
 		VStack {
@@ -30,7 +30,7 @@ struct SecondSheet: View {
 				.background(Color.red)
 				.onTapGesture {
 					interactor.dismiss(SecondSheetModel.Dismiss.Event())
-					dismiss()
+					presentationMode.wrappedValue.dismiss()
 				}
 			
 		}

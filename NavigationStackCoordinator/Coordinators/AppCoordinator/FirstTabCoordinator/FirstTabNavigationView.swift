@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import NavigationStackBackport
 
 struct FirstTabNavigationView<R: View>: View {
 	
@@ -29,13 +29,13 @@ struct FirstTabNavigationView<R: View>: View {
 	}
 	
 	var body: some View {
-		let _ = Self._printChanges()
-		NavigationStack(path: $navigation.path) {
+		//let _ = Self._printChanges()
+		NavigationStackBackport.NavigationStack(path: $navigation.path) {
 			rootView
-				.navigationDestination(for: FirstFlowCoordinator.self) { coordinator in
+				.backport.navigationDestination(for: FirstFlowCoordinator.self) { coordinator in
 					coordinator.view()
 				}
-				.navigationDestination(for: SecondFlowCoordinator.self) { coordinator in
+				.backport.navigationDestination(for: SecondFlowCoordinator.self) { coordinator in
 					coordinator.view()
 				}
 		}

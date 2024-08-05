@@ -14,7 +14,7 @@ struct ViewDouble: View {
 	var interactor: IViewDoubleInteractor!
 	
 	var body: some View {
-		let _ = Self._printChanges()
+		//let _ = Self._printChanges()
 		VStack {
 			Text("I'm ViewDouble")
 			Text("My Value is: \(store.value)")
@@ -32,9 +32,6 @@ struct ViewDouble: View {
 				.onTapGesture {
 					interactor.requestToServer()
 				}
-		}
-		.task {
-			interactor.requestToServer()
 		}
 	}
 }

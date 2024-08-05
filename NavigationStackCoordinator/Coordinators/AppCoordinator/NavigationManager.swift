@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import NavigationStackBackport
 
 final class Navigation: ObservableObject {
-	@Published var path: NavigationPath = NavigationPath()
+	@Published var path: NavigationStackBackport.NavigationPath = NavigationStackBackport.NavigationPath()
 	@Published var sheet: AnyHashable?
 	@Published var fullScreenCover: AnyHashable?
 }

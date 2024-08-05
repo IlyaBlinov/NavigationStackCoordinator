@@ -16,25 +16,22 @@ struct CustomNavigationBarContainerView<Content: View>: View {
 	
 	
 	let content: Content
-	let pathManager: PathManager
 	
 	init(
-		pathManager: PathManager,
 		@ViewBuilder content: () -> Content
 	) {
-		self.pathManager = pathManager
 		self.content = content()
 	}
 	
 	var body: some View {
-		let _ = Self._printChanges()
+		//let _ = Self._printChanges()
 		VStack(spacing: 0) {
 			CustomNavigationBarView(
 				title: title,
 				subtitle: subtitle,
 				backButtonHidden: backButtonHidden,
 				backButtonAction: {
-					pathManager.pop()
+					
 				}
 			)
 			content
@@ -55,7 +52,7 @@ struct CustomNavigationBarContainerView<Content: View>: View {
 }
 
 #Preview {
-	CustomNavigationBarContainerView(pathManager: PathManager()) {
+	CustomNavigationBarContainerView() {
 		ZStack {
 			Color.blue.ignoresSafeArea()
 			Text("Hello")

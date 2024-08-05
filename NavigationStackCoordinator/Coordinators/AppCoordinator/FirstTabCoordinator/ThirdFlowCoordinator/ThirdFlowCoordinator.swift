@@ -27,7 +27,7 @@ final class ThirdFlowCoordinator: Hashable, Codable {
 	}
 	
 	@ViewBuilder
-	func view(pathManager: PathManager) -> some View {
+	func view() -> some View {
 		switch self.page {
 		case .viewInt:
 			EmptyView()
@@ -59,14 +59,14 @@ extension ThirdFlowCoordinator {
 		func presentFirstSheet() {
 		}
 		
-		let pathManager: PathManager
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
+		
+		init() {
+			
 		}
 		
 		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewDouble))
+			
 		}
 		
 		
@@ -83,14 +83,10 @@ extension ThirdFlowCoordinator {
 		}
 		
 		
-		let pathManager: PathManager
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
 		
 		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewString))
+		
 		}
 		
 		
@@ -99,14 +95,10 @@ extension ThirdFlowCoordinator {
 	
 	final class ViewStringOutput: IViewStringOutput {
 		
-		let pathManager: PathManager
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
 		
 		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewInt))
+			
 		}
 		
 		
@@ -114,14 +106,10 @@ extension ThirdFlowCoordinator {
 	
 	
 	final class FirstTabOutput: IFirstTabViewOutput {
-		let pathManager: PathManager
 		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
 		
 		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewInt))
+			
 		}
 	}
 }

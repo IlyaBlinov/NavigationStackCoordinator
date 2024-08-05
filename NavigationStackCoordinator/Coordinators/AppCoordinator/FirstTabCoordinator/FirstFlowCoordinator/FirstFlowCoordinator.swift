@@ -78,18 +78,16 @@ final class FirstFlowCoordinator: Hashable, IFirstFlowCoordinator {
 	}
 
 	func showViewString() {
-		self.page = .viewString
-		self.navigationManager.push(self)
+		self.navigationManager.push(FirstFlowCoordinator(page: .viewString, navigationManager: navigationManager, assembly: assembly, tabBarManager: tabBarManager))
 	}
 	
 	func showViewInt() {
-		self.page = .viewInt
-		self.navigationManager.push(self)
+		
+		self.navigationManager.push(FirstFlowCoordinator(page: .viewInt, navigationManager: navigationManager, assembly: assembly, tabBarManager: tabBarManager))
 	}
 	
 	func showViewDouble() {
-		self.page = .viewDouble
-		self.navigationManager.push(self)
+		self.navigationManager.push(FirstFlowCoordinator(page: .viewDouble, navigationManager: navigationManager, assembly: assembly, tabBarManager: tabBarManager))
 	}
 	
 	func showSecondFlowCoordinatorView() {

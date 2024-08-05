@@ -48,6 +48,8 @@
 		6F68C5852C4CFE5400219D8D /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5842C4CFE5400219D8D /* NavigationManager.swift */; };
 		6F68C5872C4E224E00219D8D /* FirstTabCoordinator+FirstTabOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5862C4E224E00219D8D /* FirstTabCoordinator+FirstTabOutput.swift */; };
 		6F68C5892C50224500219D8D /* AppCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F68C5882C50224500219D8D /* AppCoordinatorAssembly.swift */; };
+		6F79AF892C6090E000C3A79F /* TaskModifierBackport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79AF882C6090E000C3A79F /* TaskModifierBackport.swift */; };
+		6F79AF8C2C60988500C3A79F /* NavigationStackBackport in Frameworks */ = {isa = PBXBuildFile; productRef = 6F79AF8B2C60988500C3A79F /* NavigationStackBackport */; };
 		6F9A46A82C2D272E009983A3 /* NavigationStackCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */; };
 		6F9A46AC2C2D272F009983A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AB2C2D272F009983A3 /* Assets.xcassets */; };
 		6F9A46B02C2D272F009983A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */; };
@@ -157,6 +159,7 @@
 		6F68C5842C4CFE5400219D8D /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		6F68C5862C4E224E00219D8D /* FirstTabCoordinator+FirstTabOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FirstTabCoordinator+FirstTabOutput.swift"; sourceTree = "<group>"; };
 		6F68C5882C50224500219D8D /* AppCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6F79AF882C6090E000C3A79F /* TaskModifierBackport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModifierBackport.swift; sourceTree = "<group>"; };
 		6F9A46A42C2D272E009983A3 /* NavigationStackCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinatorApp.swift; sourceTree = "<group>"; };
 		6F9A46AB2C2D272F009983A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -228,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F79AF8C2C60988500C3A79F /* NavigationStackBackport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				6F68C5012C3BAE3F00219D8D /* Binding+AnyHashable.swift */,
+				6F79AF882C6090E000C3A79F /* TaskModifierBackport.swift */,
 				6F68C5752C4A76AE00219D8D /* View */,
 				6F68C5802C4CF3B500219D8D /* PublishedObject.swift */,
 			);
@@ -677,6 +682,9 @@
 			dependencies = (
 			);
 			name = NavigationStackCoordinator;
+			packageProductDependencies = (
+				6F79AF8B2C60988500C3A79F /* NavigationStackBackport */,
+			);
 			productName = NavigationStackCoordinator;
 			productReference = 6F9A46A42C2D272E009983A3 /* NavigationStackCoordinator.app */;
 			productType = "com.apple.product-type.application";
@@ -709,6 +717,9 @@
 				Base,
 			);
 			mainGroup = 6F9A469B2C2D272E009983A3;
+			packageReferences = (
+				6F79AF8A2C60988500C3A79F /* XCRemoteSwiftPackageReference "navigation-stack-backport" */,
+			);
 			productRefGroup = 6F9A46A52C2D272E009983A3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -841,6 +852,7 @@
 				6F68C5282C49562F00219D8D /* SecondSheet.swift in Sources */,
 				6F9A46F52C2DD6F1009983A3 /* FirstTabViewAssembly.swift in Sources */,
 				6F68C5642C4A5ACC00219D8D /* LoaderPresenter.swift in Sources */,
+				6F79AF892C6090E000C3A79F /* TaskModifierBackport.swift in Sources */,
 				6F68C5092C3BB09F00219D8D /* FirstFlowSheetCoordinator.swift in Sources */,
 				6F68C5892C50224500219D8D /* AppCoordinatorAssembly.swift in Sources */,
 			);
@@ -865,7 +877,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D76F2D5568;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IB.NavigationStackCoordinator-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -885,7 +897,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D76F2D5568;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "IB.NavigationStackCoordinator-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1036,7 +1048,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -1075,7 +1087,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.2;
@@ -1121,6 +1133,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6F79AF8A2C60988500C3A79F /* XCRemoteSwiftPackageReference "navigation-stack-backport" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lm/navigation-stack-backport";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6F79AF8B2C60988500C3A79F /* NavigationStackBackport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6F79AF8A2C60988500C3A79F /* XCRemoteSwiftPackageReference "navigation-stack-backport" */;
+			productName = NavigationStackBackport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6F9A469C2C2D272E009983A3 /* Project object */;
 }
