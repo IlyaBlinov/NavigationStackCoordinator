@@ -13,7 +13,7 @@ protocol IFirstFlowCoordinatorAssembly: AnyObject {
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString
 	func assemblySheetCoordinator(sheet: FirstFlowSheetCoordinator.Sheet) -> FirstFlowSheetCoordinator
 	func assemblyFullScreenCoverCoordinator(fullScreenCover: FirstFlowFullScreenCoverCoordinator.FullScreenCover) -> FirstFlowFullScreenCoverCoordinator
-	func assemblySecondFlowCoordinator(navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> SecondFlowCoordinator
+	func assemblySecondFlowCoordinator(page: SecondFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> SecondFlowCoordinator
 }
 
 
@@ -48,12 +48,13 @@ final class FirstFlowCoordinatorAssembly: IFirstFlowCoordinatorAssembly {
 	}
 	
 	func assemblySecondFlowCoordinator(
+		page: SecondFlowCoordinator.Page,
 		navigationManager: INavigationManager,
 		tabBarManager: ITabBarManager
 	) -> SecondFlowCoordinator {
 		let assembly = SecondFlowCoordinatorAssembly()
 		let coordinator = SecondFlowCoordinator(
-			page: .viewString,
+			page: page,
 			navigationManager: navigationManager,
 			assembly: assembly,
 			tabBarManager: tabBarManager

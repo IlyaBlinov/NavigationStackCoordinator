@@ -34,7 +34,7 @@ struct ViewDouble: View {
 				}
 		}
 		.task {
-			interactor.requestToServer()
+			//interactor.requestToServer()
 		}
 	}
 }

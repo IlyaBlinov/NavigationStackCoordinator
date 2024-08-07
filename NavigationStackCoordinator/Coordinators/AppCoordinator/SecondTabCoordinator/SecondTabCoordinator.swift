@@ -1,27 +1,27 @@
 //
-//  FirstTabCoordinator.swift
+//  SecondTabCoordinator.swift
 //  NavigationStackCoordinator
 //
-//  Created by Илья Блинов on 30.06.2024.
+//  Created by Илья Блинов on 06.08.2024.
 //
 
 import SwiftUI
 
-protocol IFirstTabCoordinator: AnyObject {
+protocol ISecondTabCoordinator: AnyObject {
 	func showViewString()
 }
 
-final class FirstTabCoordinator: IFirstTabCoordinator {
+final class SecondTabCoordinator: ISecondTabCoordinator {
 	
 	private let navigationManager: INavigationManager
 	private let tabBarManager: ITabBarManager
-	private let assembly: IFirstTabCoordinatorAssembly
+	private let assembly: ISecondTabCoordinatorAssembly
 	
 	
 	init(
 		navigationManager: INavigationManager,
 		tabBarManager: ITabBarManager,
-		assembly: IFirstTabCoordinatorAssembly
+		assembly: ISecondTabCoordinatorAssembly
 	) {
 		self.navigationManager = navigationManager
 		self.tabBarManager = tabBarManager
@@ -31,11 +31,11 @@ final class FirstTabCoordinator: IFirstTabCoordinator {
 	
 	@ViewBuilder
 	func view() -> some View {
-		assembly.assemblyFirstTabView(model: .init(value: "I'm FirstTab"))
+		assembly.assemblySecondTabView(model: .init(value: "I'm SecondTab"))
 	}
 	
 	func showViewString() {
-		let firstFlowCoordinator = assembly.assemblyFirstFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
+		let firstFlowCoordinator = assembly.assemblySecondFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
 		self.navigationManager.push(firstFlowCoordinator)
 	}
 	

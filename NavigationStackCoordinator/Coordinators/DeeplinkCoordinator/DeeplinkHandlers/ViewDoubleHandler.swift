@@ -27,7 +27,7 @@ final class ViewDoubleHandler: IDeeplinkHandler {
 			return
 		}
 		coordinator.selectNewTab(index: 0)
-		coordinator.showViewInt()
+		coordinator.showViewDouble()
 		
 	}
 	

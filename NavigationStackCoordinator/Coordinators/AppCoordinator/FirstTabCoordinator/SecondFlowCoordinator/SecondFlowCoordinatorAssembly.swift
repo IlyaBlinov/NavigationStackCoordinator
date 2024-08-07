@@ -12,6 +12,7 @@ protocol ISecondFlowCoordinatorAssembly: AnyObject {
 	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput) -> ViewDouble
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString
 	func assemblySheetCoordinator(sheet: SecondFlowSheetCoordinator.Sheet) -> SecondFlowSheetCoordinator
+	func assemblyThirdFlowCoordinator(page: ThirdFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> ThirdFlowCoordinator
 }
 
 
@@ -37,6 +38,18 @@ final class SecondFlowCoordinatorAssembly: ISecondFlowCoordinatorAssembly {
 		assembly.coordinator = sheetCoordinator
 		return sheetCoordinator
 		
+	}
+	
+	func assemblyThirdFlowCoordinator(page: ThirdFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> ThirdFlowCoordinator {
+		let assembly = ThirdFlowCoordinatorAssembly()
+		let coordinator = ThirdFlowCoordinator(
+			page: page,
+			navigationManager: navigationManager,
+			assembly: assembly,
+			tabBarManager: tabBarManager
+		)
+		assembly.coordinator = coordinator
+		return coordinator
 	}
 	
 }

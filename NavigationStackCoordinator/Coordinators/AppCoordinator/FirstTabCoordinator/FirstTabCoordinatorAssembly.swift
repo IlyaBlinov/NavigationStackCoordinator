@@ -11,7 +11,7 @@ import SwiftUI
 protocol IFirstTabCoordinatorAssembly: AnyObject {
 	func assemblyFirstTabView(model: FirstTabViewModel.SceneInput) -> FirstTabView
 	func assembly(model: FirstTabViewModel.SceneInput, output: IFirstTabViewOutput) -> FirstTabView
-	func assemblyFirstFlowCoordinator() -> FirstFlowCoordinator
+	func assemblyFirstFlowCoordinator(page: FirstFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> FirstFlowCoordinator
 }
 
 
@@ -38,11 +38,11 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 		FirstTabViewAssembly().assembly(model: model, output: output)
 	}
 	
-	func assemblyFirstFlowCoordinator() -> FirstFlowCoordinator {
+	func assemblyFirstFlowCoordinator(page: FirstFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> FirstFlowCoordinator {
 		let assembly = makeFirstFlowAssembly()
 		let coordinator =
 		FirstFlowCoordinator(
-			page: .viewInt,
+			page: page,
 			navigationManager: navigationManager,
 			assembly: assembly,
 			tabBarManager: tabBarManager

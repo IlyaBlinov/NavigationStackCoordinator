@@ -9,37 +9,94 @@ import Foundation
 import Foundation
 import SwiftUI
 
-enum ThirdFlowPage: Codable {
-	case viewInt, viewString, viewDouble
+protocol IThirdFlowCoordinator: AnyObject {
+	
+	func showViewString()
+	
+	func showViewInt()
+	
+	func showViewDouble()
+	
+	func selectNewTab(index: Int)
+	
+	func showFirstFlowCoordinatorView()
 }
 
-final class ThirdFlowCoordinator: Hashable, Codable {
+
+
+
+final class ThirdFlowCoordinator: Hashable, IThirdFlowCoordinator {
 	
-	private var id: UUID
-	private var page: ThirdFlowPage
+	enum Page: CaseIterable {
+		case viewInt, viewString, viewDouble
+	}
 	
+	private let navigationManager: INavigationManager
+	private let assembly: IThirdFlowCoordinatorAssembly
+	private let id: UUID
+	private var tabBarManager: ITabBarManager
+	
+	var page: Page
 	
 	init(
-		page: ThirdFlowPage
+		page: Page,
+		navigationManager: INavigationManager,
+		assembly: IThirdFlowCoordinatorAssembly,
+		tabBarManager: ITabBarManager
 	) {
 		id = UUID()
 		self.page = page
+		self.navigationManager = navigationManager
+		self.assembly = assembly
+		self.tabBarManager = tabBarManager
 	}
 	
 	@ViewBuilder
-	func view(pathManager: PathManager) -> some View {
+	func view() -> some View {
 		switch self.page {
 		case .viewInt:
-			EmptyView()
-			//ViewInt().configure(.init(value: 100, output: ViewIntOutput(pathManager: pathManager)))
+			assembly.assemblyViewInt(.init(value: 122))
 		case .viewDouble:
-			EmptyView()
-			//ViewDouble().configure(.init(value: 999.0, output: ViewDoubleOutput(pathManager: pathManager)))
+			assembly.assemblyViewDouble(.init(value: 43.98))
 		case .viewString:
-			EmptyView()
-			//ViewString().configure(.init(value: "THird Flow", output: ViewStringOutput(pathManager: pathManager)))
+			assembly.assemblyString(.init(value: "Third Flow"))
 		}
 	}
+	
+	//MARK: Tab Bar
+	
+	func selectNewTab(index: Int) {
+		self.tabBarManager.setSelectedIndex(index)
+	}
+	
+	//MARK:  Show Views
+	
+	func showViewString() {
+		let coordinator = build(.viewString)
+		self.navigationManager.push(coordinator)
+	}
+	
+	func showViewInt() {
+		let coordinator = build(.viewInt)
+		self.navigationManager.push(coordinator)
+	}
+	
+	func showViewDouble() {
+		let coordinator = build(.viewDouble)
+		self.navigationManager.push(coordinator)
+	}
+	
+	func showFirstFlowCoordinatorView() {
+		let coordinator = assembly.assemblyFirstFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
+		self.navigationManager.push(coordinator)
+	}
+	
+	private func build(_ page: Page) -> ThirdFlowCoordinator {
+		ThirdFlowCoordinator(page: page, navigationManager: navigationManager, assembly: assembly, tabBarManager: tabBarManager)
+	}
+	
+	
+	// MARK: Hashable
 	
 	func hash(into hasher: inout Hasher) {
 		hasher.combine(id)
@@ -52,76 +109,4 @@ final class ThirdFlowCoordinator: Hashable, Codable {
 		lhs.id == rhs.id
 	}
 	
-}
-
-extension ThirdFlowCoordinator {
-	final class ViewIntOutput: IViewIntOutput {
-		func presentFirstSheet() {
-		}
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewDouble))
-		}
-		
-		
-	}
-	
-	
-	final class ViewDoubleOutput: IViewDoubleOutput {
-		func showLoader() {
-			
-		}
-		
-		func hideLoader() {
-			
-		}
-		
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewString))
-		}
-		
-		
-	}
-	
-	
-	final class ViewStringOutput: IViewStringOutput {
-		
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewInt))
-		}
-		
-		
-	}
-	
-	
-	final class FirstTabOutput: IFirstTabViewOutput {
-		let pathManager: PathManager
-		
-		init(pathManager: PathManager) {
-			self.pathManager = pathManager
-		}
-		
-		func pushNextScreen() {
-			pathManager.push(ThirdFlowCoordinator(page: .viewInt))
-		}
-	}
 }

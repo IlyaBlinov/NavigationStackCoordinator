@@ -18,7 +18,7 @@ extension FirstFlowCoordinator {
 		}
 		
 		func pushNextScreen() {
-			coordinator.showViewString()
+			coordinator.showSecondFlowCoordinatorView()
 		}
 		
 		func showLoader() {

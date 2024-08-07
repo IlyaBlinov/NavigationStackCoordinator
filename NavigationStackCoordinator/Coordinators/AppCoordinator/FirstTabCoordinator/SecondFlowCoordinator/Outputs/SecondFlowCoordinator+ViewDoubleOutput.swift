@@ -26,7 +26,7 @@ extension SecondFlowCoordinator {
 		}
 		
 		func pushNextScreen() {
-			coordinator.showViewString()
+			coordinator.showThirdFlowCoordinatorView()
 		}
 		
 		

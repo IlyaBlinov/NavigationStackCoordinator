@@ -17,7 +17,7 @@ extension FirstTabCoordinator {
 		}
 		
 		func pushNextScreen() {
-			coordinator.showViewInt()
+			coordinator.showViewString()
 		}
 	}
 }

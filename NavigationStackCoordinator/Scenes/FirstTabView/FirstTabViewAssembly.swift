@@ -20,17 +20,6 @@ final class FirstTabViewAssembly: IFirstTabViewAssembly {
 		view.store.value = model.value
 		return view
 	}
-	
-	
-	
 }
 
 
-extension FirstTabView {
-	func configure(_ model: FirstTabViewModel.SceneInput, output: IFirstTabViewOutput) -> some View {
-		var view = self
-		view.store.value = model.value
-		view.interactor = FirstTabViewInteractor(output: output)
-		return view
-	}
-}

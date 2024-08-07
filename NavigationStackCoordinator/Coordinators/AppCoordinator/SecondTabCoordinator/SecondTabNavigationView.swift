@@ -1,15 +1,15 @@
 //
-//  FirstTabCoordinatorView.swift
+//  SecondTabNavigationView.swift
 //  NavigationStackCoordinator
 //
-//  Created by Илья Блинов on 30.06.2024.
+//  Created by Илья Блинов on 06.08.2024.
 //
 
 import Foundation
 import SwiftUI
 
 
-struct FirstTabNavigationView<R: View>: View {
+struct SecondTabNavigationView<R: View>: View {
 	
 	@StateObject private var navigation: Navigation
 	
@@ -46,8 +46,8 @@ struct FirstTabNavigationView<R: View>: View {
 			item: $sheet,
 			type: FirstFlowSheetCoordinator.self,
 			content: { coordinator in
-			coordinator.view()
-		})
+				coordinator.view()
+			})
 		.sheet(
 			item: $sheet,
 			type: SecondFlowSheetCoordinator.self,
