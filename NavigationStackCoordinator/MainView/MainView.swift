@@ -8,32 +8,6 @@
 import SwiftUI
 
 
-//struct MainView: View {
-//	
-//	private let pathManager: PathManager
-//	
-//	init(pathManager: PathManager) {
-//		self.pathManager = pathManager
-//	}
-//	
-//	var body: some View {
-//		let _ = Self._printChanges()
-//		Group {
-//			FirstTabView().configure(.init(value: "HI"), output: FirstFlowCoordinator.FirstTabOutput(pathManager: pathManager))
-//		}
-		
-//	}
-//}
-
-class TabBarSettings: ObservableObject {
-	
-	@Published var selectedIndex: Int = 0
-	
-	init(selectedIndex: Int) {
-		self.selectedIndex = selectedIndex
-	}
-	
-}
 
 struct MainView<FirstTabView: View, SecondTabView: View,  ThirdTabView: View>: View {
 	

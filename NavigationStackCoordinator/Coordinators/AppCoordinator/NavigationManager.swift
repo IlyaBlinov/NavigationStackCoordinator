@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 final class Navigation: ObservableObject {
 	@Published var path: NavigationPath = NavigationPath()

@@ -11,7 +11,6 @@ final class AppCoordinator: Hashable {
 	
 	private let assembly: IAppCoordinatorAssembly
 	private let id: UUID
-	var deeplinkCoordinator = DeeplinkCoordinator()
 	
 	init(assembly: IAppCoordinatorAssembly) {
 		self.assembly = assembly

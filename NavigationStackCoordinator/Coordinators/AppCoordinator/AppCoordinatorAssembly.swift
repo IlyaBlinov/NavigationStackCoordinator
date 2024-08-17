@@ -28,21 +28,8 @@ final class AppCoordinatorAssembly: IAppCoordinatorAssembly {
 	
 	func assemblyDeeplinkCoordinator() -> DeeplinkCoordinator {
 		
-		let deeplinkCoordinator = DeeplinkCoordinator()
-		let navigationManager = NavigationManager(navigation: mainContainer.firstTabNavigation)
-		let tabBarManager = TabBarManager(tabBarNavigaton: mainContainer.tabBarNavigaton)
-		
-		let assembly = FirstTabCoordinatorAssembly(
-			navigationManager: navigationManager,
-			tabBarManager: tabBarManager
-		)
-		
-		let firstFlowDeeplinkHandlersFactory = FirstFlowDeeplinkHandlersFactory(coordinator: assembly.assemblyFirstFlowCoordinator(page: .viewInt, navigationManager: navigationManager, tabBarManager: tabBarManager))
-		let firstTabDeeplinkHandlersFactory = FirstTabDeeplinkHandlersFactory(firstFlowDeeplinkHandlersFactory: firstFlowDeeplinkHandlersFactory)
-		
-		let firstTabDeeplinksHandlers = firstTabDeeplinkHandlersFactory.produce()
-		
-		deeplinkCoordinator.handlers.append(contentsOf: firstTabDeeplinksHandlers)
+		let deeplinkCoordinatorAssembly = DeeplinkCoordinatorAssembly(mainContainer: mainContainer)
+		let deeplinkCoordinator = DeeplinkCoordinator(assembly: deeplinkCoordinatorAssembly)
 		
 		return deeplinkCoordinator
 		

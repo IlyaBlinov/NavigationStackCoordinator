@@ -1,18 +1,17 @@
 //
-//  FirstTabwDeeplinkHandlersFactory.swift
+//  SecondTabDeeplinkHandlersAssembly.swift
 //  NavigationStackCoordinator
 //
-//  Created by Илья Блинов on 02.07.2024.
+//  Created by Илья Блинов on 10.08.2024.
 //
 
 import Foundation
 
-protocol IFirstTabDeeplinkHandlersFactory {
+protocol ISecondTabDeeplinkHandlersFactory {
 	func produce() -> [IDeeplinkHandler]
 }
 
-
-final class FirstTabDeeplinkHandlersFactory: IFirstTabDeeplinkHandlersFactory {
+final class SecondTabDeeplinkHandlersFactory: ISecondTabDeeplinkHandlersFactory {
 	
 	private var navigationManager: NavigationManager
 	private var tabBarManager: TabBarManager
@@ -22,13 +21,13 @@ final class FirstTabDeeplinkHandlersFactory: IFirstTabDeeplinkHandlersFactory {
 		self.tabBarManager = tabBarManager
 	}
 	
+	
 	func produce() -> [IDeeplinkHandler] {
 		let viewIntHandlerFactory = ViewIntHandlerFactory(
 			navigationManager: navigationManager,
 			tabBarManager: tabBarManager,
-			deeplinkMapper: FirstTabViewIntDeeplinkMapper()
+			deeplinkMapper: SecondTabViewIntDeeplinkMapper()
 		)
 		return [viewIntHandlerFactory.produce()]
 	}
-	
 }

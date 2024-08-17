@@ -22,7 +22,14 @@ protocol IDeeplinkCoordinator {
 
 final class DeeplinkCoordinator: IDeeplinkCoordinator {
 	
-	var handlers: [IDeeplinkHandler] = []
+	var handlers: [IDeeplinkHandler]
+	
+	private let assembly: IDeeplinkCoordinatorAssembly
+	
+	init(assembly: IDeeplinkCoordinatorAssembly) {
+		self.assembly = assembly
+		self.handlers = assembly.assemblyDeeplinkHandlers()
+	}
 	
 	@discardableResult
 	func handleURL(_ url: URL) -> Bool {
