@@ -22,13 +22,13 @@ extension Deeplink {
 
 final class ViewIntDeeplinkHandler: IDeeplinkHandler {
 	
-	private let tabBarManager: TabBarManager
-	private let navigationManager: NavigationManager
+	private let tabBarManager: ITabBarManager
+	private let navigationManager: INavigationManager
 	private let mapper: IDeeplinkMapper
 	
 	init(
-		tabBarManager: TabBarManager,
-		navigationManager: NavigationManager,
+		tabBarManager: ITabBarManager,
+		navigationManager: INavigationManager,
 		mapper: IDeeplinkMapper
 	) {
 		self.tabBarManager = tabBarManager

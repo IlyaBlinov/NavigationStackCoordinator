@@ -30,7 +30,7 @@ final class AppCoordinator_tests: XCTestCase {
 		// When
 		let view = appCoordinator.view()
 		// Then
-		XCTAssertTrue(view is MainView<FirstTabNavigationView<FirstTabView>, Color, Color>)
+		XCTAssertTrue(view is MainView<FirstTabNavigationView<FirstTabView>, SecondTabNavigationView<SecondTabView>, ThirdTabNavigationView<ThirdTabView>>)
 		XCTAssertNotNil(view)
 		
 	}

@@ -13,13 +13,13 @@ protocol IViewIntHandlerFactory {
 
 final class ViewIntHandlerFactory: IViewIntHandlerFactory {
 	
-	private let navigationManager: NavigationManager
-	private let tabBarManager: TabBarManager
+	private let navigationManager: INavigationManager
+	private let tabBarManager: ITabBarManager
 	private let deeplinkMapper: IDeeplinkMapper
 	
 	init(
-		navigationManager: NavigationManager,
-		tabBarManager: TabBarManager,
+		navigationManager: INavigationManager,
+		tabBarManager: ITabBarManager,
 		deeplinkMapper: IDeeplinkMapper
 	) {
 		self.navigationManager = navigationManager

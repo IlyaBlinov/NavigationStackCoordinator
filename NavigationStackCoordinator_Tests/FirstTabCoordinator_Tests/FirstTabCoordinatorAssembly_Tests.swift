@@ -15,11 +15,14 @@ import XCTest
 final class FirstTabCoordinatorAssembly_Tests: XCTestCase {
 	
 	var assembly: FirstTabCoordinatorAssembly!
-	let firstTabCoordinator = FirstTabCoordinatorStub()
+	var tabBarManagerSpy: TabBarManagerSpy!
+	var navigationManagerSpy: NavigationManagerSpy!
+	var firstTabCoordinator: FirstTabCoordinatorStub!
 
 	override func setUpWithError() throws {
-		let navigationManagerSpy = NavigationManagerSpy()
-		let tabBarManagerSpy = TabBarManagerSpy()
+		navigationManagerSpy = NavigationManagerSpy()
+		tabBarManagerSpy = TabBarManagerSpy()
+		firstTabCoordinator = FirstTabCoordinatorStub()
 		assembly = FirstTabCoordinatorAssembly(
 			navigationManager: navigationManagerSpy,
 			tabBarManager: tabBarManagerSpy
@@ -37,7 +40,7 @@ final class FirstTabCoordinatorAssembly_Tests: XCTestCase {
 	func test_firstTabCoordinatorAssembly_assemblyFirstFlowCoordinator_shouldBeTrue() {
 		// Given
 		// When
-		let coordinator = assembly.assemblyFirstFlowCoordinator()
+		let coordinator = assembly.assemblyFirstFlowCoordinator(page: .viewInt, navigationManager: navigationManagerSpy, tabBarManager: tabBarManagerSpy)
 		// Then
 		XCTAssertTrue(coordinator is FirstFlowCoordinator)
 		XCTAssertNotNil(coordinator)

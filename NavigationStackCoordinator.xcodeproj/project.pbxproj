@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F22183D2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F22183C2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.swift */; };
 		6F2218442C5CA75D0012DCE2 /* AppCoordinator_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2218432C5CA75D0012DCE2 /* AppCoordinator_Tests.swift */; };
 		6F2218462C5CAAA80012DCE2 /* FirstTabCoordinator_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2218452C5CAAA80012DCE2 /* FirstTabCoordinator_Tests.swift */; };
 		6F22185A2C5FD8080012DCE2 /* NavigationManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F2218592C5FD8080012DCE2 /* NavigationManagerSpy.swift */; };
@@ -76,6 +75,7 @@
 		6F79AFD72C6B2A2600C3A79F /* ViewIntHandlerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79AFD62C6B2A2600C3A79F /* ViewIntHandlerFactory.swift */; };
 		6F79AFDA2C6B2A7300C3A79F /* ViewIntDeeplinkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79AFD92C6B2A7300C3A79F /* ViewIntDeeplinkMapper.swift */; };
 		6F79AFDE2C6DC55200C3A79F /* IDeeplinkMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79AFDD2C6DC55200C3A79F /* IDeeplinkMapper.swift */; };
+		6F79AFE22C70BE3900C3A79F /* ViewIntHandlerFactory_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F79AFE12C70BE3900C3A79F /* ViewIntHandlerFactory_Tests.swift */; };
 		6F9A46A82C2D272E009983A3 /* NavigationStackCoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */; };
 		6F9A46AC2C2D272F009983A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AB2C2D272F009983A3 /* Assets.xcassets */; };
 		6F9A46B02C2D272F009983A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F9A46AF2C2D272F009983A3 /* Preview Assets.xcassets */; };
@@ -126,6 +126,10 @@
 		6F9A472B2C359BEB009983A3 /* ViewIntPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A472A2C359BEB009983A3 /* ViewIntPresenter.swift */; };
 		6F9A472D2C35A690009983A3 /* PresentationScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A472C2C35A690009983A3 /* PresentationScene.swift */; };
 		6F9A47312C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A47302C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift */; };
+		6FE76BA12C70CA4B0096541B /* ViewIntDeeplinkMapperDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE76BA02C70CA4B0096541B /* ViewIntDeeplinkMapperDummy.swift */; };
+		6FE76BA32C70CB4E0096541B /* ViewIntDeeplinkHandler_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE76BA22C70CB4E0096541B /* ViewIntDeeplinkHandler_Tests.swift */; };
+		6FE76BA52C70CD020096541B /* FirstTabViewIntDeeplinkMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE76BA42C70CD020096541B /* FirstTabViewIntDeeplinkMapperMock.swift */; };
+		6FE76BA72C70CD180096541B /* SecondTabViewIntDeeplinkMapperMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE76BA62C70CD180096541B /* SecondTabViewIntDeeplinkMapperMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,7 +144,6 @@
 
 /* Begin PBXFileReference section */
 		6F22183A2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationStackCoordinator_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F22183C2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinator_Tests.swift; sourceTree = "<group>"; };
 		6F2218432C5CA75D0012DCE2 /* AppCoordinator_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator_Tests.swift; sourceTree = "<group>"; };
 		6F2218452C5CAAA80012DCE2 /* FirstTabCoordinator_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabCoordinator_Tests.swift; sourceTree = "<group>"; };
 		6F2218592C5FD8080012DCE2 /* NavigationManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManagerSpy.swift; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 		6F79AFD62C6B2A2600C3A79F /* ViewIntHandlerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntHandlerFactory.swift; sourceTree = "<group>"; };
 		6F79AFD92C6B2A7300C3A79F /* ViewIntDeeplinkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntDeeplinkMapper.swift; sourceTree = "<group>"; };
 		6F79AFDD2C6DC55200C3A79F /* IDeeplinkMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDeeplinkMapper.swift; sourceTree = "<group>"; };
+		6F79AFE12C70BE3900C3A79F /* ViewIntHandlerFactory_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntHandlerFactory_Tests.swift; sourceTree = "<group>"; };
 		6F9A46A42C2D272E009983A3 /* NavigationStackCoordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NavigationStackCoordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F9A46A72C2D272E009983A3 /* NavigationStackCoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackCoordinatorApp.swift; sourceTree = "<group>"; };
 		6F9A46AB2C2D272F009983A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -262,6 +266,10 @@
 		6F9A472A2C359BEB009983A3 /* ViewIntPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntPresenter.swift; sourceTree = "<group>"; };
 		6F9A472C2C35A690009983A3 /* PresentationScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationScene.swift; sourceTree = "<group>"; };
 		6F9A47302C37A120009983A3 /* SecondFlowCoordinatorAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondFlowCoordinatorAssembly.swift; sourceTree = "<group>"; };
+		6FE76BA02C70CA4B0096541B /* ViewIntDeeplinkMapperDummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntDeeplinkMapperDummy.swift; sourceTree = "<group>"; };
+		6FE76BA22C70CB4E0096541B /* ViewIntDeeplinkHandler_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewIntDeeplinkHandler_Tests.swift; sourceTree = "<group>"; };
+		6FE76BA42C70CD020096541B /* FirstTabViewIntDeeplinkMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTabViewIntDeeplinkMapperMock.swift; sourceTree = "<group>"; };
+		6FE76BA62C70CD180096541B /* SecondTabViewIntDeeplinkMapperMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTabViewIntDeeplinkMapperMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,7 +293,7 @@
 		6F22183B2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6F22183C2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.swift */,
+				6FE76B9F2C70CA3D0096541B /* ViewIntHandlerFactory_Tests */,
 				6F2218662C5FE5BA0012DCE2 /* FirstFlowCoordinator_Tests */,
 				6F2218632C5FE40D0012DCE2 /* Spies */,
 				6F2218582C5FD7DD0012DCE2 /* AppCoordinator_Tests */,
@@ -771,6 +779,18 @@
 			path = "Custom Views";
 			sourceTree = "<group>";
 		};
+		6FE76B9F2C70CA3D0096541B /* ViewIntHandlerFactory_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				6F79AFE12C70BE3900C3A79F /* ViewIntHandlerFactory_Tests.swift */,
+				6FE76BA02C70CA4B0096541B /* ViewIntDeeplinkMapperDummy.swift */,
+				6FE76BA42C70CD020096541B /* FirstTabViewIntDeeplinkMapperMock.swift */,
+				6FE76BA62C70CD180096541B /* SecondTabViewIntDeeplinkMapperMock.swift */,
+				6FE76BA22C70CB4E0096541B /* ViewIntDeeplinkHandler_Tests.swift */,
+			);
+			path = ViewIntHandlerFactory_Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -873,11 +893,15 @@
 			files = (
 				6F22185A2C5FD8080012DCE2 /* NavigationManagerSpy.swift in Sources */,
 				6F2218622C5FDCE40012DCE2 /* FirstTabCoordinatorStub.swift in Sources */,
+				6FE76BA52C70CD020096541B /* FirstTabViewIntDeeplinkMapperMock.swift in Sources */,
 				6F2218442C5CA75D0012DCE2 /* AppCoordinator_Tests.swift in Sources */,
+				6FE76BA72C70CD180096541B /* SecondTabViewIntDeeplinkMapperMock.swift in Sources */,
 				6F2218462C5CAAA80012DCE2 /* FirstTabCoordinator_Tests.swift in Sources */,
 				6F22185E2C5FD8260012DCE2 /* FirstTabCoordinatorAssemblyStub.swift in Sources */,
+				6F79AFE22C70BE3900C3A79F /* ViewIntHandlerFactory_Tests.swift in Sources */,
 				6F2218652C5FE5B30012DCE2 /* FirstFlowCoordinator_Tests.swift in Sources */,
-				6F22183D2C5CA57C0012DCE2 /* NavigationStackCoordinator_Tests.swift in Sources */,
+				6FE76BA32C70CB4E0096541B /* ViewIntDeeplinkHandler_Tests.swift in Sources */,
+				6FE76BA12C70CA4B0096541B /* ViewIntDeeplinkMapperDummy.swift in Sources */,
 				6F2218602C5FDC730012DCE2 /* FirstTabCoordinatorAssembly_Tests.swift in Sources */,
 				6F22185C2C5FD8160012DCE2 /* TabBarManagerSpy.swift in Sources */,
 			);

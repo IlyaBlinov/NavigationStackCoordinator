@@ -9,7 +9,6 @@ import Foundation
 @testable import NavigationStackCoordinator
 
 final class FirstTabCoordinatorStub: IFirstTabCoordinator {
-	
-	func showViewInt() {}
+	func showViewString() {}
 	
 }

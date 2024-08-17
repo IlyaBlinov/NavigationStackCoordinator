@@ -30,7 +30,7 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 		self.tabBarManager = tabBarManager
 	}
 	
-	func makeFirstFlowAssembly() -> FirstFlowCoordinatorAssembly {
+	private func makeFirstFlowAssembly() -> FirstFlowCoordinatorAssembly {
 		FirstFlowCoordinatorAssembly()
 	}
 	
@@ -38,7 +38,11 @@ final class FirstTabCoordinatorAssembly: IFirstTabCoordinatorAssembly {
 		FirstTabViewAssembly().assembly(model: model, output: output)
 	}
 	
-	func assemblyFirstFlowCoordinator(page: FirstFlowCoordinator.Page, navigationManager: INavigationManager, tabBarManager: ITabBarManager) -> FirstFlowCoordinator {
+	func assemblyFirstFlowCoordinator(
+		page: FirstFlowCoordinator.Page,
+		navigationManager: INavigationManager,
+		tabBarManager: ITabBarManager
+	) -> FirstFlowCoordinator {
 		let assembly = makeFirstFlowAssembly()
 		let coordinator =
 		FirstFlowCoordinator(
