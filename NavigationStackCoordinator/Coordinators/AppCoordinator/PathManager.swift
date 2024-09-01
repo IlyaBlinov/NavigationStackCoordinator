@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-
+@available(*, deprecated)
 enum SheetAction: Identifiable {
 	
 	case viewDouble(ViewDouble)
@@ -19,7 +19,7 @@ enum SheetAction: Identifiable {
 }
 
 
-
+@available(*, deprecated)
 enum FullScreenCoverAction: Identifiable {
 	
 	case viewString(ViewString)
@@ -29,6 +29,7 @@ enum FullScreenCoverAction: Identifiable {
 	}
 }
 
+@available(*, deprecated)
 final class PathManager: ObservableObject {
 	
 	var pathPublisher: Published<NavigationPath>.Publisher { $path }
