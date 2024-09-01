@@ -8,15 +8,15 @@
 import SwiftUI
 
 protocol IFirstTabCoordinator: AnyObject {
-	func showViewString()
+	func showFirstFlowCoordinator()
 }
 
-final class FirstTabCoordinator: IFirstTabCoordinator {
+final class FirstTabCoordinator: Hashable, IFirstTabCoordinator {
 	
 	private let navigationManager: INavigationManager
 	private let tabBarManager: ITabBarManager
 	private let assembly: IFirstTabCoordinatorAssembly
-	
+	private let id: UUID
 	
 	init(
 		navigationManager: INavigationManager,
@@ -26,18 +26,25 @@ final class FirstTabCoordinator: IFirstTabCoordinator {
 		self.navigationManager = navigationManager
 		self.tabBarManager = tabBarManager
 		self.assembly = assembly
-		
+		self.id = UUID()
 	}
 	
-	@ViewBuilder
-	func view() -> some View {
-		assembly.assemblyFirstTabView(model: .init(value: "I'm FirstTab"))
-	}
-	
-	func showViewString() {
+	func showFirstFlowCoordinator() {
 		let firstFlowCoordinator = assembly.assemblyFirstFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
 		self.navigationManager.push(firstFlowCoordinator)
 	}
 	
+	// MARK: Hashable
+	
+	func hash(into hasher: inout Hasher) {
+		hasher.combine(id)
+	}
+	
+	static func == (
+		lhs: FirstTabCoordinator,
+		rhs: FirstTabCoordinator
+	) -> Bool {
+		lhs.id == rhs.id
+	}
 	
 }

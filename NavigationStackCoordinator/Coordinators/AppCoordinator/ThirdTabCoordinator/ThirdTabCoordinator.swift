@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 protocol IThirdTabCoordinator: AnyObject {
-	func showViewString()
+	func showThirdFlowCoordinator()
 }
 
 final class ThirdTabCoordinator: IThirdTabCoordinator {
@@ -30,12 +30,7 @@ final class ThirdTabCoordinator: IThirdTabCoordinator {
 		
 	}
 	
-	@ViewBuilder
-	func view() -> some View {
-		assembly.assemblyThirdTabView(model: .init(value: "I'm ThirdTab"))
-	}
-	
-	func showViewString() {
+	func showThirdFlowCoordinator() {
 		let coordinator = assembly.assemblyThirdFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
 		self.navigationManager.push(coordinator)
 	}

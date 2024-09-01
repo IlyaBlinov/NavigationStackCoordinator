@@ -1,5 +1,5 @@
 //
-//  SecondFlowCoordinator+ViewStringOutput.swift
+//  SecondFlowCoordinator+ViewDoubleOutput.swift
 //  NavigationStackCoordinator
 //
 //  Created by Илья Блинов on 08.07.2024.
@@ -7,9 +7,16 @@
 
 import Foundation
 
-extension SecondFlowCoordinator {
-	
-	final class ViewStringOutput: IViewStringOutput {
+
+	final class SecondFlowViewDoubleOutput: IViewDoubleOutput {
+		func showLoader() {
+			
+		}
+		
+		func hideLoader() {
+			
+		}
+		
 		
 		let coordinator: ISecondFlowCoordinator
 		
@@ -19,7 +26,8 @@ extension SecondFlowCoordinator {
 		}
 		
 		func pushNextScreen() {
-			coordinator.showViewInt()
+			coordinator.showThirdFlowCoordinatorView()
 		}
+		
+		
 	}
-}

@@ -23,10 +23,7 @@ final class FirstTabCoordinatorAssembly_Tests: XCTestCase {
 		navigationManagerSpy = NavigationManagerSpy()
 		tabBarManagerSpy = TabBarManagerSpy()
 		firstTabCoordinator = FirstTabCoordinatorStub()
-		assembly = FirstTabCoordinatorAssembly(
-			navigationManager: navigationManagerSpy,
-			tabBarManager: tabBarManagerSpy
-		)
+		assembly = FirstTabCoordinatorAssembly()
 		
 		
 		assembly.coordinator = firstTabCoordinator
@@ -47,13 +44,13 @@ final class FirstTabCoordinatorAssembly_Tests: XCTestCase {
 		XCTAssertTrue(coordinator.page == .viewInt)
 	}
 	
-	func test_firstTabCoordinatorAssembly_assemblyFirstTabView_shouldBeTrue() {
-		// Given
-		// When
-		let view = assembly.assemblyFirstTabView(model: .init(value: ""))
-		// Then
-		XCTAssertTrue(view is FirstTabView)
-		XCTAssertNotNil(view)
-	}
+//	func test_firstTabCoordinatorAssembly_assemblyFirstTabView_shouldBeTrue() {
+//		// Given
+//		// When
+//		let view = assembly.assemblyFirstTabView(model: .init(value: ""))
+//		// Then
+//		XCTAssertTrue(view is FirstTabView)
+//		XCTAssertNotNil(view)
+//	}
 	
 }

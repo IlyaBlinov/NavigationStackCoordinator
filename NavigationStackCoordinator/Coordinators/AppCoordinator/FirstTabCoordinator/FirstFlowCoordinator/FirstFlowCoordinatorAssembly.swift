@@ -22,15 +22,15 @@ final class FirstFlowCoordinatorAssembly: IFirstFlowCoordinatorAssembly {
 	weak var coordinator: IFirstFlowCoordinator!
 	
 	func assemblyViewInt(_ model: ViewIntModel.SceneInput) -> ViewInt {
-		ViewIntAssembly().assembly(model: model, output: FirstFlowCoordinator.ViewIntOutput(coordinator: coordinator))
+		ViewIntAssembly().assembly(model: model, output: FirstFlowViewIntOutput(coordinator: coordinator))
 	}
 	
 	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput) -> ViewDouble {
-		ViewDoubleAssembly().assembly(model: model, output: FirstFlowCoordinator.ViewDoubleOutput(coordinator: coordinator))
+		ViewDoubleAssembly().assembly(model: model, output: FirstFlowViewDoubleOutput(coordinator: coordinator))
 	}
 	
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString {
-		ViewStringAssembly().assembly(model: model, output: FirstFlowCoordinator.ViewStringOutput(coordinator: coordinator))
+		ViewStringAssembly().assembly(model: model, output: FirstFlowViewStringOutput(coordinator: coordinator))
 	}
 	
 	func assemblySheetCoordinator(sheet: FirstFlowSheetCoordinator.Sheet) -> FirstFlowSheetCoordinator {

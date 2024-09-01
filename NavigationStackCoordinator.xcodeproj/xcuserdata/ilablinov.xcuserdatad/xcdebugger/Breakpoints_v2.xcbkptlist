@@ -318,8 +318,8 @@
             filePath = "NavigationStackCoordinator/Coordinators/AppCoordinator/FirstTabCoordinator/FirstTabCoordinatorAssembly.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "assemblyFirstFlowCoordinator(page:navigationManager:tabBarManager:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -369,6 +369,22 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "test_firstFlowCoordinator_selectNewTab_shouldBeEqualToGivenIndex()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D86355C-E23F-4E60-AD71-DC99E1AC320D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NavigationStackCoordinator/Coordinators/AppCoordinator/FirstTabCoordinator/FirstFlowCoordinator/ScenesOutputs/FirstFlowCoordinator+ViewStringOutput.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "pushNextScreen()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

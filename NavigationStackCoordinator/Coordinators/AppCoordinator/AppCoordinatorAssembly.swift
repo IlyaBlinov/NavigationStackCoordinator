@@ -9,8 +9,6 @@ import SwiftUI
 
 protocol IAppCoordinatorAssembly: AnyObject {
 	func assemblyDeeplinkCoordinator() -> DeeplinkCoordinator
-	func assemblyFirstTabCoordinator() -> FirstTabCoordinator
-	
 	func assemblyMainView() -> MainView<FirstTabNavigationView<FirstTabView>, SecondTabNavigationView<SecondTabView>, ThirdTabNavigationView<ThirdTabView>>
 }
 
@@ -35,15 +33,10 @@ final class AppCoordinatorAssembly: IAppCoordinatorAssembly {
 		
 	}
 	
-	// MARK: TabCoordinatorAssembly
-	
-	func assemblyFirstTabCoordinator() -> FirstTabCoordinator {
+	private func assemblyFirstTabCoordinator() -> FirstTabCoordinator {
 		let navigationManager = NavigationManager(navigation: mainContainer.firstTabNavigation)
 		let tabBarManager = TabBarManager(tabBarNavigaton: mainContainer.tabBarNavigaton)
-		let assembly = FirstTabCoordinatorAssembly(
-			navigationManager: navigationManager,
-			tabBarManager: tabBarManager
-		)
+		let assembly = FirstTabCoordinatorAssembly()
 		let coordinator = FirstTabCoordinator(
 			navigationManager: navigationManager,
 			tabBarManager: tabBarManager,
@@ -53,13 +46,10 @@ final class AppCoordinatorAssembly: IAppCoordinatorAssembly {
 		return coordinator
 	}
 	
-	func assemblySecondTabCoordinator() -> SecondTabCoordinator {
+	private func assemblySecondTabCoordinator() -> SecondTabCoordinator {
 		let navigationManager = NavigationManager(navigation: mainContainer.secondTabNavigation)
 		let tabBarManager = TabBarManager(tabBarNavigaton: mainContainer.tabBarNavigaton)
-		let assembly = SecondTabCoordinatorAssembly(
-			navigationManager: navigationManager,
-			tabBarManager: tabBarManager
-		)
+		let assembly = SecondTabCoordinatorAssembly()
 		let coordinator = SecondTabCoordinator(
 			navigationManager: navigationManager,
 			tabBarManager: tabBarManager,
@@ -70,13 +60,10 @@ final class AppCoordinatorAssembly: IAppCoordinatorAssembly {
 	}
 	
 	
-	func assemblyThirdTabCoordinator() -> ThirdTabCoordinator {
+	private func assemblyThirdTabCoordinator() -> ThirdTabCoordinator {
 		let navigationManager = NavigationManager(navigation: mainContainer.secondTabNavigation)
 		let tabBarManager = TabBarManager(tabBarNavigaton: mainContainer.tabBarNavigaton)
-		let assembly = ThirdTabCoordinatorAssembly(
-			navigationManager: navigationManager,
-			tabBarManager: tabBarManager
-		)
+		let assembly = ThirdTabCoordinatorAssembly()
 		let coordinator = ThirdTabCoordinator(
 			navigationManager: navigationManager,
 			tabBarManager: tabBarManager,
@@ -96,29 +83,40 @@ final class AppCoordinatorAssembly: IAppCoordinatorAssembly {
 	}
 	
 	
-	func assemblyFirstTabCoordinatorView() -> FirstTabNavigationView<FirstTabView> {
-		let coordinator = self.assemblyFirstTabCoordinator()
-		return FirstTabNavigationView(
-			navigation: mainContainer.firstTabNavigation,
-			rootView: coordinator.view() as! FirstTabView
-		)
+	private func assemblyFirstTabCoordinatorView() -> FirstTabNavigationView<FirstTabView> {
 		
+		let coordinator = self.assemblyFirstTabCoordinator()
+		
+		let output = FirstTabOutput(coordinator: coordinator)
+		let rootView = FirstTabViewAssembly().assembly(model: .init(value: "I'm FirstTab"), output: output)
+		
+		return FirstTabNavigationView(navigation: mainContainer.firstTabNavigation, rootView: rootView)
 	}
 	
-	func assemblySecondTabCoordinatorView() -> SecondTabNavigationView<SecondTabView> {
+
+	
+	private func assemblySecondTabCoordinatorView() -> SecondTabNavigationView<SecondTabView> {
 		let coordinator = self.assemblySecondTabCoordinator()
+		
+		let output = SecondTabOutput(coordinator: coordinator)
+		let rootView = SecondTabViewAssembly().assembly(model: .init(value: "I'm SecondTab"), output: output)
+		
 		return SecondTabNavigationView(
 			navigation: mainContainer.secondTabNavigation,
-			rootView: coordinator.view() as! SecondTabView
+			rootView: rootView
 		)
 		
 	}
 	
-	func assemblyThirdTabCoordinatorView() -> ThirdTabNavigationView<ThirdTabView> {
+	private func assemblyThirdTabCoordinatorView() -> ThirdTabNavigationView<ThirdTabView> {
 		let coordinator = self.assemblyThirdTabCoordinator()
+		
+		let output = ThirdTabOutput(coordinator: coordinator)
+		let rootView = ThirdTabViewAssembly().assembly(model: .init(value: "I'm ThirdTab"), output: output)
+		
 		return ThirdTabNavigationView(
 			navigation: mainContainer.thirdTabNavigation,
-			rootView: coordinator.view() as! ThirdTabView
+			rootView: rootView
 		)
 		
 	}

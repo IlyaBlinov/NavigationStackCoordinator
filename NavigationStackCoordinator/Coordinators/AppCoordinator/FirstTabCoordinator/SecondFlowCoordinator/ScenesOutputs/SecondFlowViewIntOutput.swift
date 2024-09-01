@@ -7,8 +7,7 @@
 
 import Foundation
 
-extension SecondFlowCoordinator {
-	final class ViewIntOutput: IViewIntOutput {
+	final class SecondFlowViewIntOutput: IViewIntOutput {
 		
 		let coordinator: ISecondFlowCoordinator
 		
@@ -26,4 +25,4 @@ extension SecondFlowCoordinator {
 		}
 		
 	}
-}
+

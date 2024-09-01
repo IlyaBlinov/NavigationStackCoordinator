@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct NavigationStackCoordinatorApp: App {
 	
-	var appCoordinator: AppCoordinator
+	private var appCoordinator: AppCoordinator
 	private var deeplinkCoordinator: DeeplinkCoordinator
 	
 	init() {

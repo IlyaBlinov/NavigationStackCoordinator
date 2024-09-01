@@ -33,17 +33,17 @@ final class FirstTabCoordinator_Tests: XCTestCase {
 		assembly.coordinator = firstTabCoordinator
 	}
 	
-	func test_firstTabCoordinator_view_showFirstTabView_shouldBeTrue() {
-		// Given
-		// When
-		// Then
-		XCTAssertTrue(firstTabCoordinator.view() is FirstTabView)
-	}
+//	func test_firstTabCoordinator_view_showFirstTabView_shouldBeTrue() {
+//		// Given
+//		// When
+//		// Then
+//		XCTAssertTrue(firstTabCoordinator.showRootView() is FirstTabView)
+//	}
 	
 	func test_firstTabCoordinator_showViewString_shouldBeInNavigationStack() {
 		// Given
 		// When
-		firstTabCoordinator.showViewString()
+		firstTabCoordinator.showFirstFlowCoordinator()
 		let pushedValue =  navigationManagerSpy.pushedValue?.base as? FirstFlowCoordinator
 		// Then
 		XCTAssertTrue(navigationManagerSpy.callPush)

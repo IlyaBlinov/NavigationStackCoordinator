@@ -20,15 +20,15 @@ final class ThirdFlowCoordinatorAssembly: IThirdFlowCoordinatorAssembly {
 	weak var coordinator: IThirdFlowCoordinator!
 	
 	func assemblyViewInt(_ model: ViewIntModel.SceneInput) -> ViewInt{
-		ViewIntAssembly().assembly(model: model, output: ThirdFlowCoordinator.ViewIntOutput(coordinator: self.coordinator))
+		ViewIntAssembly().assembly(model: model, output: ThirdFlowViewIntOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblyViewDouble(_ model: ViewDoubleModel.SceneInput) -> ViewDouble  {
-		ViewDoubleAssembly().assembly(model: model, output: ThirdFlowCoordinator.ViewDoubleOutput(coordinator: self.coordinator))
+		ViewDoubleAssembly().assembly(model: model, output: ThirdFlowViewDoubleOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblyString(_ model: ViewStringModel.SceneInput) -> ViewString  {
-		ViewStringAssembly().assembly(model: model, output: ThirdFlowCoordinator.ViewStringOutput(coordinator: self.coordinator))
+		ViewStringAssembly().assembly(model: model, output: ThirdFlowViewStringOutput(coordinator: self.coordinator))
 	}
 	
 	func assemblyFirstFlowCoordinator(page: FirstFlowCoordinator.Page, navigationManager: INavigationManager,tabBarManager: ITabBarManager) -> FirstFlowCoordinator {

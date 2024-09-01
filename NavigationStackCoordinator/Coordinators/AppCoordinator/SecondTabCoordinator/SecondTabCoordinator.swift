@@ -8,7 +8,7 @@
 import SwiftUI
 
 protocol ISecondTabCoordinator: AnyObject {
-	func showViewString()
+	func showSecondFlowCoordinator()
 }
 
 final class SecondTabCoordinator: ISecondTabCoordinator {
@@ -29,12 +29,7 @@ final class SecondTabCoordinator: ISecondTabCoordinator {
 		
 	}
 	
-	@ViewBuilder
-	func view() -> some View {
-		assembly.assemblySecondTabView(model: .init(value: "I'm SecondTab"))
-	}
-	
-	func showViewString() {
+	func showSecondFlowCoordinator() {
 		let firstFlowCoordinator = assembly.assemblySecondFlowCoordinator(page: .viewString, navigationManager: navigationManager, tabBarManager: tabBarManager)
 		self.navigationManager.push(firstFlowCoordinator)
 	}

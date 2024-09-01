@@ -25,7 +25,6 @@ struct FirstTabNavigationView<R: View>: View {
 	) {
 		self._navigation = StateObject(wrappedValue: navigation)
 		self.rootView = rootView
-		
 	}
 	
 	var body: some View {

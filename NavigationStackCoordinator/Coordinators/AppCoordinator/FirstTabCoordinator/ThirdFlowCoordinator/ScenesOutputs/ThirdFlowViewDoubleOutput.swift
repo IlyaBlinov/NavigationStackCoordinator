@@ -7,8 +7,7 @@
 
 import Foundation
 
-extension ThirdFlowCoordinator {
-	final class ViewDoubleOutput: IViewDoubleOutput {
+	final class ThirdFlowViewDoubleOutput: IViewDoubleOutput {
 		
 		let coordinator: IThirdFlowCoordinator
 		
@@ -27,4 +26,4 @@ extension ThirdFlowCoordinator {
 		
 		
 	}
-}
+
